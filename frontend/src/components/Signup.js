@@ -5,6 +5,9 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setname] = useState('');
+  const Singup = () => {
+    console.log( email, password,name);
+    };
   return (
     <div>
        <Container maxWidth="sm">
@@ -36,7 +39,7 @@ const Signup = () => {
        <Button 
         variant="contained" 
         color="primary" 
-        onClick={ }
+        onClick={ Singup}
       >
      Singup
       </Button>
