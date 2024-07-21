@@ -21,7 +21,7 @@ const Header = () => {
         
          <Nav.Link><Link to="/signup" className="nav-link">Signup</Link></Nav.Link>
          <Nav.Link><Link to="/login" className="nav-link">Login</Link></Nav.Link>
-         <Nav.Link><Link to="/dashboard" className="nav-link">Dashboard</Link></Nav.Link>
+         <Nav.Link><Link to="/dashbord" className="nav-link">Dashboard</Link></Nav.Link>
          <Nav.Link><Link to="/addattendence" className="nav-link">Mark Attendence</Link></Nav.Link>
          <Nav.Link><Link to="/allatten" className="nav-link">view Attendences</Link></Nav.Link>
           </Nav>

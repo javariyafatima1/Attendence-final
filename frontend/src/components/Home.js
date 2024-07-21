@@ -5,6 +5,9 @@ const Home = () => {
   return (
     <div>
       <Banner/>
+      <h1>Attendence APP
+        
+      </h1>
     </div>
   );
 }

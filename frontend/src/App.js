@@ -20,7 +20,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/dashbord" element={<Dashboard />}/>
           <Route path="/addattendence" element={<CreateAtten />}/>
-          <Route path="/allatten" element={< AllAtten/>}/>
+          <Route path="/allatten" element={<AllAtten />}/>
        </Routes>
         </div>
         </BrowserRouter>
