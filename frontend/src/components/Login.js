@@ -12,7 +12,7 @@ const Login = () => {
     return (
         <div>
            <Container maxWidth="sm">
-          <Typography variant="h4" gutterBottom>Singup</Typography>
+          <Typography variant="h4" gutterBottom>Login</Typography>
           
           <TextField
            fullWidth
