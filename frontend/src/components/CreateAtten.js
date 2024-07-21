@@ -7,6 +7,9 @@ const CreateAtten = () => {
   const [classname, setclassname] = useState('');
   const [teacher, setteacher] = useState('');
   const [status, setStatus] = useState('Present');
+  const MarkAttendance = () => {
+    console.log( studentId, date, status,teacher,classname);
+     };
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom>Mark Attendance</Typography>
