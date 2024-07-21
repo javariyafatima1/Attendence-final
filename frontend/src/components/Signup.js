@@ -10,6 +10,7 @@ const Signup = () => {
   const [name, setname] = useState('');
   const Singup = () => {
     console.log( email, password,name);
+    navigate('/login');
     };
   return (
     <div>
@@ -44,8 +45,11 @@ const Signup = () => {
         color="primary" 
         onClick={ Singup}
       >
-     Singup
-      </Button>
+     Singup 
+     
+    </Button>
+
+   
      </Container>
     </div>
   );
