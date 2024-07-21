@@ -7,7 +7,33 @@ const Signup = () => {
   const [name, setname] = useState('');
   return (
     <div>
-      singup
+       <Container maxWidth="sm">
+      <Typography variant="h4" gutterBottom>Singup</Typography>
+      <TextField
+        fullWidth
+        margin="normal"
+        label="Name"
+        type="text"
+        value={name}
+        onChange={(e) => setname(e.target.value)}
+      />
+      <TextField
+        fullWidth
+        margin="normal"
+        label="Email"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <TextField
+        fullWidth
+        margin="normal"
+        label="Password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+     </Container>
     </div>
   );
 }
