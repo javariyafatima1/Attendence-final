@@ -8,7 +8,7 @@ const Header = () => {
     <div>
 <Navbar expand="lg" variant="dark" className="navbar-custom">
    <Container> 
-   {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
+
       <Navbar.Brand  href="/"><img src={image} style={{height:50,width:70}}/>
       </Navbar.Brand>
      <Navbar.Brand href="/">AttendenceApp </Navbar.Brand>
