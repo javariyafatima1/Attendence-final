@@ -6,7 +6,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
    
     const Login = () => {
-      console.log( email, password,name);
+      console.log( email, password);
       };
 
     return (
