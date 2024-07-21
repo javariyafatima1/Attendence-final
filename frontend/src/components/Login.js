@@ -22,13 +22,13 @@ const Login = () => {
            value={email}
            onChange={(e) => setEmail(e.target.value)}
           />
-            <TextField
+         <TextField
         fullWidth
         margin="normal"
-        label="Email"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        label="Password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
           <Button 
         variant="contained" 
