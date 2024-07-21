@@ -8,3 +8,16 @@ const Signup = () => {
     const Singup = () => {
       console.log( email, password,name);
       };
+
+    return (
+        <div>
+           <Container maxWidth="sm">
+          <Typography variant="h4" gutterBottom>Singup</Typography>
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Name"
+            type="text"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
+          />
