@@ -22,7 +22,9 @@ const Header = () => {
          <Nav.Link><Link to="/signup" className="nav-link">Signup</Link></Nav.Link>
          <Nav.Link><Link to="/login" className="nav-link">Login</Link></Nav.Link>
          <Nav.Link><Link to="/dashboard" className="nav-link">Dashboard</Link></Nav.Link>
+         <Nav.Link><Link to="/addattendence" className="nav-link">MArk Attendence</Link></Nav.Link>
           </Nav>
+          
      </Navbar.Collapse>
    </Container>
  </Navbar>
