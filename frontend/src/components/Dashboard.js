@@ -6,7 +6,6 @@ const Dashboard = () => {
       <Container>
     <Typography variant="h4" gutterBottom>Dashboard</Typography>
     <Typography>Welcome to the student Attendence portal!</Typography>
-    <AllAtten/>
   </Container>
     </div>
   );
