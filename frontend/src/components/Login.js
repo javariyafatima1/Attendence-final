@@ -13,14 +13,7 @@ const Login = () => {
         <div>
            <Container maxWidth="sm">
           <Typography variant="h4" gutterBottom>Singup</Typography>
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Name"
-            type="text"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
-          />
+          
           <TextField
            fullWidth
            margin="normal"
@@ -29,8 +22,23 @@ const Login = () => {
            value={email}
            onChange={(e) => setEmail(e.target.value)}
           />
+            <TextField
+        fullWidth
+        margin="normal"
+        label="Email"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+          <Button 
+        variant="contained" 
+        color="primary" 
+        onClick={ Login}
+      >
+     Login
+      </Button>
           </Container>
           </div>
     );
   }
-  
+  export default Login;
