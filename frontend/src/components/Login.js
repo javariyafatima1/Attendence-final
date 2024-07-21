@@ -4,8 +4,8 @@ import { TextField, Button, Container, Typography } from '@mui/material';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setname] = useState('');
-    const Singup = () => {
+   
+    const Login = () => {
       console.log( email, password,name);
       };
 
@@ -29,3 +29,8 @@ const Login = () => {
            value={email}
            onChange={(e) => setEmail(e.target.value)}
           />
+          </Container>
+          </div>
+    );
+  }
+  
