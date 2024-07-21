@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography } from '@mui/material';
 
-const Signup = () => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setname] = useState('');
-    const Singup = () => {
+    const Login = () => {
       console.log( email, password,name);
       };
 
@@ -13,14 +12,7 @@ const Signup = () => {
         <div>
            <Container maxWidth="sm">
           <Typography variant="h4" gutterBottom>Singup</Typography>
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Name"
-            type="text"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
-          />
+          
           <TextField
            fullWidth
            margin="normal"
@@ -29,3 +21,16 @@ const Signup = () => {
            value={email}
            onChange={(e) => setEmail(e.target.value)}
           />
+          <Button 
+        variant="contained" 
+        color="primary" 
+        onClick={ Login}
+      >
+     Login
+      </Button>
+          </Container>
+          </div>
+
+    )
+  }
+  export default Login;
