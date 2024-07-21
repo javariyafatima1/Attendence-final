@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-
-const AllAtten = () => {
+import './AllAtten.css';
+const AllAtten  = () =>  {
     const [attendance, setAttendance] = useState([]);
     useEffect(() => {
         setAttendance([
