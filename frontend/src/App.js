@@ -7,6 +7,7 @@ import  Header from './components/Header';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import CreateAtten from './components/CreateAtten';
+import AllAtten from './components/AllAtten';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/dashbord" element={<Dashboard />}/>
           <Route path="/addattendence" element={<CreateAtten />}/>
+          <Route path="/allatten" element={< AllAtten/>}/>
        </Routes>
         </div>
         </BrowserRouter>

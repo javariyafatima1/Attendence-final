@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 const Login = () => {
+  const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
    
     const Login = () => {
       console.log( email, password);
+      navigate('/dashbord');
       };
 
     return (
