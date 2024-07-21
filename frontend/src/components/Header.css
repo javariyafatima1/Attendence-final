@@ -1,0 +1,75 @@
+.navbar-custom {
+    background-color: #ffffff;
+    padding: 10px 0;
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+
+  .navbar-custom .navbar-brand {
+    color: #24a758; 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+  }
+  
+  .navbar-custom .navbar-brand:hover {
+    color: #17a2b8;
+  }
+
+  
+  .navbar-custom .navbar-nav {
+    font-size: 1.2rem;
+  }
+  
+  
+  .navbar-custom .nav-link {
+    color: #0278b8; 
+    padding: 10px 15px; 
+  
+    transition: color 0.3s ease; 
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #24a758; 
+  }
+  
+  
+  .navbar-custom .nav-link.active {
+    font-weight: bold; 
+  }
+  
+  
+  .navbar-custom .navbar-toggler {
+    border-color: #ffffff;
+  }
+  
+  .navbar-custom .navbar-toggler-icon {
+    background-color: #ffffff; }
+  
+  
+  .navbar-custom .navbar-collapse {
+    justify-content: flex-end; 
+  }
+  
+  .navbar-custom .navbar-nav .nav-item {
+    margin-right: 10px; 
+  }
+  
+  @media (max-width: 768px) {
+    
+    .navbar-custom .navbar-toggler {
+      margin-right: 0; 
+    }
+    
+    .navbar-custom .navbar-collapse {
+      justify-content: flex-start; 
+      background-color: #343a40; 
+      padding: 10px; 
+    }
+    
+    .navbar-custom .navbar-nav .nav-item {
+      margin-bottom: 10px; 
+    }
+  }
+  
