@@ -3,13 +3,14 @@ import Carousel from 'react-bootstrap/Carousel';
 import './Banner.css';
 const Banner = () => {
   return (
-    <div>
+    <div style={{marginTop:50}}>
+
        <Carousel data-bs-theme="dark">
       <Carousel.Item>
         <img
          style={{ width: '100%', height: '300px', objectFit: 'cover' }}
           className="  mx-5 "
-           src="https://i0.wp.com/www.esearchadvisors.com/blog/wp-content/uploads/2018/12/ESA-Blog-Banner.jpg?fit=724%2C306&ssl=1"
+           src="https://www.shutterstock.com/image-photo/concept-attendance-business-management-businessman-260nw-2149069489.jpg"
            alt="First slide"
         />
         <Carousel.Caption>
@@ -29,7 +30,7 @@ const Banner = () => {
         <img
          style={{ width: '100%', height: '300px', objectFit: 'cover' }}
           className=" mx-5"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVa1Kz2ImgUA7FVLzfUsVHPyak3216ycsCnSPTtM7-a9MDaTW_Hc8Y-Vf5EzyCm0QzGZA&usqp=CAU"
+          src="https://thumbs.dreamstime.com/b/woman-hand-writing-attendance-marker-blue-background-professionally-79573891.jpg"
           alt="Third slide"
         />
       
