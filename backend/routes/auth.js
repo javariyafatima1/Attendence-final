@@ -13,3 +13,15 @@ router.post('/signup', async (req, res) => {
       res.status(400).json({ error: err.message });
     }
   });
+  router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try{
+        const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ error: 'Invalid email or password' });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ error: 'Invalid email or password' });
+    }catch{
+        res.status(500).json({ error: err.message });
+    }
+
+  });
