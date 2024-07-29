@@ -1,5 +1,5 @@
 const { Router } = require("express")
-
+const verifyToken = require("../middleware/verifyToken")
 const router = Router();
 
 const { signupUser, loginUser, getUserData } = require("../controllers/user")
