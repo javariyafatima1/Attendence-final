@@ -90,6 +90,12 @@ const getUserData = async (req, res) => {
             res.status(500).send({ message: e.message });
         }
 };
+module.exports = {
+   
+    signupUser,
+    loginUser,
+    getUserData
+   }; 
 
     
 
