@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require  ('../controllers/user');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 
