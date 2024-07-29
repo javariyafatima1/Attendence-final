@@ -1,5 +1,6 @@
 const bycrypt = require('bcrypt');
 const  jwt = require('jsonwebtoken');
+const userCheck = require('../schema/userscema')
 
 const signupUser = async (req, res) => {
     const { name, email, password } = req.body
