@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import CreateAtten from './components/CreateAtten';
 import AllAtten from './components/AllAtten';
+import AuthRoute from './components/AuthRoute';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/signup" element={<Signup />}/>
           <Route path="/login" element={<Login />}/>
-          <Route path="/dashbord" element={<Dashboard />}/>
+          <Route path="/dashbord" element={<AuthRoute element={<Dashboard />}/>}/>
           <Route path="/addattendence" element={<CreateAtten />}/>
           <Route path="/allatten" element={<AllAtten />}/>
        </Routes>
