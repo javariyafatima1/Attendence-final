@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
+import CardText from 'react-bootstrap/esm/CardText';
 
 const Signup = () => {
   
@@ -11,9 +12,16 @@ const Signup = () => {
     name:""
     
 });
-  const Singup = () => {
-    console.log( email, password,name);
-    navigate('/login');
+  const Singup = async () => {
+       try{
+        const response = await axios.post('http://localhost:1000/api/signup', sing);
+        alert("user create")
+        setsing({ email: "", password: "" , name: "" });
+        console.log(response)
+       }catch(error){
+        console.error(error);
+       }
+       navigate("/login")
     };
     const handleChange = (e) => {
       const { name, value } = e.target;
