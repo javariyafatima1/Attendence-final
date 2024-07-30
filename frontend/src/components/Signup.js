@@ -5,13 +5,20 @@ import { TextField, Button, Container, Typography } from '@mui/material';
 const Signup = () => {
   
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setname] = useState('');
+  const [sing, setsing] = useState({
+    email: "",
+    password:"",
+    name:""
+    
+});
   const Singup = () => {
     console.log( email, password,name);
     navigate('/login');
     };
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setsing({ ...sing, [name]: value });
+  }
   return (
     <div>
        <Container maxWidth="sm">
@@ -20,25 +27,28 @@ const Signup = () => {
         fullWidth
         margin="normal"
         label="Name"
+        name='name'
         type="text"
-        value={name}
-        onChange={(e) => setname(e.target.value)}
+        value={sing.name}
+        onChange={handleChange}
       />
       <TextField
         fullWidth
         margin="normal"
         label="Email"
+        name="email"
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={sing.email}
+        onChange={handleChange}
       />
       <TextField
         fullWidth
         margin="normal"
         label="Password"
         type="password"
+        name='password'
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handleChange}
       />
        <Button 
         variant="contained" 
