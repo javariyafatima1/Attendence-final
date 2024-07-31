@@ -1,10 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 
 const Home = () => {
   return (
     <div>
+
+      {/* Main Section */}
+
       <div className="main-section">
         <div className="column1">
           <h1 className="heading">Attendance Portal</h1>
@@ -28,42 +33,38 @@ const Home = () => {
         <div className="card-container">
           <Card className="custom-card" style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+              <Card.Title>Student Card</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Student Attendance Portal</Card.Subtitle>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
+              <Card.Link href="#">Click here...</Card.Link>
             </Card.Body>
           </Card>
           <Card className="custom-card" style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+              <Card.Title>Admin Card</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Admin Attendance Portal</Card.Subtitle>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-          <Card className="custom-card" style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
+              <Card.Link href="#">Click here...</Card.Link>
             </Card.Body>
           </Card>
         </div>
       </div>
+
+
+      {/* Footer */}
+      <footer className="footer">
+      <Container>
+          <Row>
+          <Col className="text-center">
+            <p className="mt-3">© 2024 Attendance Portal. All rights reserved.</p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
     </div>
   );
 };
