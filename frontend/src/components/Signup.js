@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
-
+import axios from "axios"
 const Signup = () => {
   
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Signup = () => {
         label="Password"
         type="password"
         name='password'
-        value={password}
+        value={sing.password}
         onChange={handleChange}
       />
        <Button 

@@ -29,11 +29,6 @@ catch (e) {
         message: e.message,
     })
 }
-module.exports = verifyToken
-
-
-
-
-
 
 }
+module.exports = verifyToken
