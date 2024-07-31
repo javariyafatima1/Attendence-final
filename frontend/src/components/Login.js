@@ -28,7 +28,7 @@ const Login = () => {
          console.error('Token not received');
        }
       }catch(error){
-       console.error("error")
+       console.error(error)
        if (error.response && error.response.data) {
         setError(error.response.data.message);
         alert(error.response.data.message)
