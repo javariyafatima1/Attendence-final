@@ -1,15 +1,47 @@
 import React, { useState } from 'react';
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
+import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-   
-    const Login = () => {
-      console.log( email, password);
-      navigate('/dashbord');
+  const [sing, setsing] = useState({
+    email: "",
+    password:"",
+    });
+    const [error, setError] = useState("")
+  
+    const Login = async () => {
+      if (sing.email === "" || sing.password === "") {
+        alert("All fields are required");
+        return;
+      }
+      try {
+        const res = await axios.post('http://localhost:1000/api/login', sing);
+        setsing({ email: "", password: "" , });
+        alert("login suceful")
+     console.log(res)
+      
+       if (res.data.token) {
+        localStorage.setItem('token', res.data.token);
+       navigate('/dashbord');
+       } else {
+         console.error('Token not received');
+       }
+      }catch(error){
+       console.error("error")
+       if (error.response && error.response.data) {
+        setError(error.response.data.message);
+        alert(error.response.data.message)
+      } else {
+        setError("Please try again");
+      }
+    }
+      
       };
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setsing({ ...sing, [name]: value });
+    }
 
     return (
         <div>
@@ -21,21 +53,23 @@ const Login = () => {
            margin="normal"
            label="Email"
            type="email"
-           value={email}
-           onChange={(e) => setEmail(e.target.value)}
+           name='email'
+           value={sing.email}
+           onChange={handleChange}
           />
          <TextField
         fullWidth
         margin="normal"
         label="Password"
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        name='password'
+        value={sing.password}
+        onChange={handleChange}
       />
           <Button 
         variant="contained" 
         color="primary" 
-        onClick={ Login}
+        onClick={Login}
       >
      Login
       </Button>
