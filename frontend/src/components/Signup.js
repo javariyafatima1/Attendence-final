@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
+import CardText from 'react-bootstrap/esm/CardText';
 
 const Signup = () => {
   
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setname] = useState('');
-  const Singup = () => {
-    console.log( email, password,name);
-    navigate('/login');
+  const [sing, setsing] = useState({
+    email: "",
+    password:"",
+    name:""
+    
+});
+  const Singup = async () => {
+       try{
+        const response = await axios.post('http://localhost:1000/api/signup', sing);
+        alert("user create")
+        setsing({ email: "", password: "" , name: "" });
+        console.log(response)
+       }catch(error){
+        console.error(error);
+       }
+       navigate("/login")
     };
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setsing({ ...sing, [name]: value });
+  }
   return (
     <div>
        <Container maxWidth="sm">
@@ -20,25 +35,28 @@ const Signup = () => {
         fullWidth
         margin="normal"
         label="Name"
+        name='name'
         type="text"
-        value={name}
-        onChange={(e) => setname(e.target.value)}
+        value={sing.name}
+        onChange={handleChange}
       />
       <TextField
         fullWidth
         margin="normal"
         label="Email"
+        name="email"
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={sing.email}
+        onChange={handleChange}
       />
       <TextField
         fullWidth
         margin="normal"
         label="Password"
         type="password"
+        name='password'
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handleChange}
       />
        <Button 
         variant="contained" 
