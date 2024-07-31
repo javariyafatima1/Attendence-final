@@ -34,7 +34,10 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
       <Container>
     <Typography variant="h4" gutterBottom>Dashboard</Typography>
     <Typography>Welcome to the student Attendence portal!</Typography>
-    <AllAtten/>
+    <h1>Dashboard</h1>
+            <p>Welcome, {userData.name}!</p>
+            <p>Email: {userData.email}</p>
+            <p>Student ID: {userData._id}</p>
   </Container>
  
     </div>
