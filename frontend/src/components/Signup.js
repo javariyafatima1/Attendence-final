@@ -13,6 +13,10 @@ const Signup = () => {
     
 });
   const Singup = async () => {
+    if (sing.email === "" || sing.password === "" || sing.name === "") {
+      alert("All fields are required");
+      return;
+    }
        try{
         const response = await axios.post('http://localhost:1000/api/signup', sing);
         alert("user create")
@@ -36,6 +40,7 @@ const Signup = () => {
         margin="normal"
         label="Name"
         name='name'
+        
         type="text"
         value={sing.name}
         onChange={handleChange}
