@@ -14,8 +14,21 @@ const Dashboard = () => {
         navigate('/login'); 
         return;
     }
+    try{
+const response = await axios.get('http://localhost:1000/api/getUserData', {
+      headers: { Authorization: `Bearer ${token}` }
+  });
+  setUserData(response.data.user);
+}catch{
+  console.error('Error user data:', error);
+  if (error.response?.status === 401) {
+      navigate('/login');          
+     }
+}
     }
+    fetchUserData();
   },[navigate])
+  if (!userData) return <div>Loading...</div>;
   return (
     <div>
       <Container>
