@@ -1,7 +1,7 @@
 
 import React, { useState ,useEffect} from 'react';
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './AllAtten.css';
 const AllAtten  = () =>  {
@@ -19,7 +19,7 @@ const AllAtten  = () =>  {
     }
 
   },[])
-
+  
   const fetchAttendance = async (studentId) => {
     try{
       const response = await axios.get(`http://localhost:1000/at/attendance/${studentId}`,{
@@ -48,11 +48,11 @@ const AllAtten  = () =>  {
           </TableHead>
           <TableBody>
           {attendanceRecords.map(record => (
-                        <tr key={record._id}>
-                            <td>{new Date(record.date).toLocaleDateString()}</td>
-                            <td>{record.course}</td>
-                        </tr>
-                    ))}
+                <TableRow key={record._id}>
+                  <TableCell>{new Date(record.date).toLocaleDateString()}</TableCell>
+                  <TableCell>{record.course}</TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
