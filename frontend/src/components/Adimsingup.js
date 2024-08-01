@@ -62,7 +62,7 @@ const AdminSignup = () => {
      
     </Button>
     <Button>
-    <Link to="/login" className="nav-link">alredy singup to please login</Link>
+    <Link to="/adminlogin" className="nav-link">alredy singup to please login</Link>
     </Button>
 
    
