@@ -17,7 +17,20 @@ const markAttendance = async (req, res) => {
     }
 }
 const getAttendanceStudentId = async (req, res) => {
-
+    const { studentId } = req.params;
+    try {
+        const attendanceRecords = await Attendance.find({ studentId });
+        res.status(200).send({
+            message: "Attendance records successfully",
+            attendanceRecords,
+        });
+    }catch(e){
+        console.error(e.message);
+        res.status(500).send({
+            message: "Failed attendance records",
+            error: e.message,
+        });
+    }
 }
 module.exports = {
     markAttendance,
