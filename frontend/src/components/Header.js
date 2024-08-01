@@ -19,8 +19,8 @@ const Header = () => {
        <Nav className=" fs-5">
          <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
         
-         <Nav.Link><Link to="/signup" className="nav-link">Signup</Link></Nav.Link>
-         <Nav.Link><Link to="/login" className="nav-link">Login</Link></Nav.Link>
+         <Nav.Link><Link to="/signup" className="nav-link">StudentPortal</Link></Nav.Link>
+         <Nav.Link><Link to="#" className="nav-link">AdminPortal</Link></Nav.Link>
 </Nav>
         
      </Navbar.Collapse>
