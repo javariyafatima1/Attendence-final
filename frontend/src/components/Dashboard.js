@@ -3,6 +3,7 @@ import { Container, Typography } from '@mui/material';
 import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import Logout from './Logout';
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
@@ -38,6 +39,8 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
             <p>Welcome, {userData.name}!</p>
             <p>Email: {userData.email}</p>
             <p>Student ID: {userData._id}</p>
+            <Logout/>
+            
   </Container>
  
     </div>
