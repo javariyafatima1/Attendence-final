@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {    useNavigate,} from "react-router-dom";
+import {    useNavigate,Link} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
 import axios from "axios";
@@ -34,7 +34,7 @@ const Signup = () => {
   return (
     <div>
        <Container maxWidth="sm">
-      <Typography variant="h4" gutterBottom>Singup</Typography>
+      <Typography variant="h4" gutterBottom> Student Singup</Typography>
       <TextField
         fullWidth
         margin="normal"
@@ -70,6 +70,9 @@ const Signup = () => {
       >
      Singup 
      
+    </Button>
+    <Button>
+    <Link to="/login" className="nav-link">alredy singup to please login</Link>
     </Button>
 
    
