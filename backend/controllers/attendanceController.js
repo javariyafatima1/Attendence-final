@@ -8,8 +8,8 @@ const markAttendance = async (req, res) => {
             message: "Attendance marked successfully",
             attendance: savedAttendance,
         });
-    }catch(error){
-        console.message(error.message)
+    }catch(e){
+        console.message(e.message)
         res.status(500).send({
             message: "Failed mark attendance",
             error: e.message,

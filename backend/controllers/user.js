@@ -33,7 +33,7 @@ const loginUser = async (req, res) => {
     console.log("req body", req.body)
     try {
        
-        const databaseUser = await userCheck.findOne({ email: email });
+        const databaseUser = await userCheck.findOne({ email });
         console.log("Database user found:", databaseUser);
         if (databaseUser) {
             const hashedPassword = databaseUser.password;
@@ -42,7 +42,7 @@ const loginUser = async (req, res) => {
             if (compareRes) {
                 const JWT_SECRET_KEY = 'attendence';
                 console.log("JWT_SECRET_KEY:", JWT_SECRET_KEY);
-                const token = jwt.sign({ email }, JWT_SECRET_KEY, { expiresIn: '1h' });
+                const token = jwt.sign({ id: databaseUser._id, email: databaseUser.email }, JWT_SECRET_KEY, { expiresIn: '1h' });
                 console.log("Generated token:", token);
                 res.status(200).send({
                     message: "Login successful",
