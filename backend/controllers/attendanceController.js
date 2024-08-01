@@ -16,6 +16,10 @@ const markAttendance = async (req, res) => {
         });
     }
 }
+const getAttendanceStudentId = async (req, res) => {
+
+}
 module.exports = {
     markAttendance,
+    getAttendanceStudentId
 }
