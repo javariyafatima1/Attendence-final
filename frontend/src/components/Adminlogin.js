@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import axios from 'axios'
-const Login = () => {
+const AdminLogin = () => {
   const navigate = useNavigate();
   const [sing, setsing] = useState({
     email: "",
@@ -58,4 +58,4 @@ const Login = () => {
           </div>
     );
   }
-  export default Login;
+  export default AdminLogin;
