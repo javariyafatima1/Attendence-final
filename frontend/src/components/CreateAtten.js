@@ -1,15 +1,46 @@
-
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState ,useEffect} from 'react';
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Typography, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 const CreateAtten = () => {
+  const navigate = useNavigate();
   const [studentId, setStudentId] = useState('');
-  const [date, setDate] = useState('');
-  const [classname, setclassname] = useState('');
-  const [teacher, setteacher] = useState('');
-  const [status, setStatus] = useState('Present');
-  const MarkAttendance = () => {
-    console.log( studentId, date, status,teacher,classname);
-     };
+    const [course, setCourse] = useState('');
+    const [date, setDate] = useState('');
+    const [message, setMessage] = useState('');
+
+    useEffect(() => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const decodedToken = jwtDecode(token);
+        setStudentId(decodedToken.id)
+      }else{
+         setMessage("please login to mark attendence")
+         alert("please login to mark attendence")
+      }
+    },[])
+  const MarkAttendance = async () => {
+    const token = localStorage.getItem('token');
+    if(!token){
+      setMessage("please login to mark attendence")
+      return;
+    }
+    try {
+      const response = await axios.post('http://localhost:1000/at/markAttendance', {
+        studentId,
+        course,
+        date,
+    }, {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+    setMessage(response.data.message);
+        alert(response.data.message)
+        navigate('/allatten')
+    }catch(error){
+      setMessage("error ark attendence")
+    }
+  }
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom>Mark Attendance</Typography>
@@ -18,7 +49,7 @@ const CreateAtten = () => {
         margin="normal"
         label="Student ID"
         value={studentId}
-        onChange={(e) => setStudentId(e.target.value)}
+        readOnly
       />
       <TextField
         fullWidth
@@ -27,32 +58,24 @@ const CreateAtten = () => {
         label="Date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
+        required
         InputLabelProps={{ shrink: true }}
       />
-       <TextField
-        fullWidth
-        margin="normal"
-        label="Class name"
-        value={classname}
-        onChange={(e) => setclassname (e.target.value)}
-      />
-        <TextField
-        fullWidth
-        margin="normal"
-        label="Teacher Name"
-        value={teacher}
-        onChange={(e) => setteacher (e.target.value)}
-      />
-      <FormControl fullWidth margin="normal">
-        
-        <Select
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-        >
-          <MenuItem value="Present">Present</MenuItem>
-          <MenuItem value="Absent">Absent</MenuItem>
-        </Select>
-      </FormControl>
+      
+       
+      <div>
+            <label>Course:</label>
+                    <select
+                        value={course}
+                        onChange={(e) => setCourse(e.target.value)}
+                        required
+                    >
+                        <option value="">Select Course</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="AI">AI</option>
+                    </select>
+                </div>
       <Button 
         variant="contained" 
         color="primary" 
