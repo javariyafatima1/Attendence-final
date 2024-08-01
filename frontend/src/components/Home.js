@@ -12,7 +12,7 @@ const Home = () => {
 
       <div className="main-section">
         <div className="column1">
-          <h1 className="heading">Attendance Portal</h1>
+          <h1 className="heading">Attendance Portal    </h1>
           <p className="para1">
             An attendance portal page serves as a centralized platform for efficiently managing and tracking attendance-related information within an organization, institution, or event. Its primary objectives include recording attendance, providing real-time monitoring with live dashboards and alerts, and generating comprehensive reports and analytics to identify attendance patterns and trends.
           </p>
