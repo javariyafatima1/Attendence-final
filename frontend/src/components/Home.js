@@ -38,7 +38,7 @@ const Home = () => {
               <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               </Card.Text>
-              <Card.Link href="#">Click here...</Card.Link>
+              <Card.Link href="#">kkkkkk</Card.Link>
             </Card.Body>
           </Card>
           <Card className="custom-card" style={{ width: '18rem' }}>
