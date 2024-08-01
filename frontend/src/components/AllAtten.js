@@ -10,15 +10,19 @@ const AllAtten  = () =>  {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token){
-      const decodedToken = jwtDecode(token);
-     const studentId = (decodedToken.id)
-     fetchAttendance(studentId);
-    }else{
-  setMessage("please login view all attendence")
+    if (token) {
+      try {
+        const decodedToken = jwtDecode(token);
+        const studentId = decodedToken.id;
+        fetchAttendance(studentId);
+      } catch (error) {
+        console.error('Error token:', error);
+        setMessage(" Please login again.");
+      }
+    } else {
+      setMessage("Please login to view all attendance.");
     }
-
-  },[])
+  }, []);
   
   const fetchAttendance = async (studentId) => {
     try{

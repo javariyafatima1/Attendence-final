@@ -13,6 +13,7 @@ import DashboardHeader from './components/headerdashbaordstudent';
 import AdminSignup from './components/Adimsingup';
 import AdminLogin from './components/Adminlogin';
 import AdminDashboardHeader from './components/AdminDashboardHeader';
+import Dashboardadmin from './components/Dashboardadmin';
 
 function App() {
   const location = useLocation();
@@ -21,7 +22,7 @@ function App() {
   return (
     <div>
       {isDashboardRoute ? <DashboardHeader/> : <Header />}
-      {adminDashboardRoute ? <AdminDashboardHeader/> : <Header />}
+      {/* {adminDashboardRoute ? <AdminDashboardHeader/> : <Header />} */}
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/adminsignup" element={<AdminSignup />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/admindashbord" element={<Dashboardadmin />} />
           <Route path="/dashbord" element={<AuthRoute element={<Dashboard />} />} />
           <Route path="/addattendence" element={<AuthRoute element={<CreateAtten />} />} />
           <Route path="/allatten" element={<AuthRoute element={<AllAtten />} />} />
