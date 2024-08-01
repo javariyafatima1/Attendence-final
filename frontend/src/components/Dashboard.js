@@ -40,6 +40,7 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
             <p>Email: {userData.email}</p>
             <p>Student ID: {userData._id}</p>
             <Logout/>
+            <AllAtten/>
             
   </Container>
  

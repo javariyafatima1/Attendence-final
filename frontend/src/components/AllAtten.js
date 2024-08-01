@@ -1,11 +1,13 @@
-import axios from 'axios';
+
 import React, { useState ,useEffect} from 'react';
+import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './AllAtten.css';
 const AllAtten  = () =>  {
   const [attendanceRecords, setAttendanceRecords] = useState([]);
   const [message, setMessage] = useState('');
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if(!token){
@@ -23,7 +25,7 @@ const AllAtten  = () =>  {
       const response = await axios.get(`http://localhost:1000/at/attendance/${studentId}`,{
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
 
-      })
+      });
       setAttendanceRecords(response.data.attendanceRecords);
     }catch(e){
       console.error(e.response.data); 
