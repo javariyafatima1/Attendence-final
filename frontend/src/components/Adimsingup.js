@@ -16,7 +16,7 @@ const AdminSignup = () => {
     
        }
        
-    };
+   
     const handleChange = (e) => {
       const { name, value } = e.target;
       setsing({ ...sing, [name]: value });
@@ -68,7 +68,8 @@ const AdminSignup = () => {
    
      </Container>
     </div>
-  );
+  )
 
+}
 
 export default AdminSignup;
