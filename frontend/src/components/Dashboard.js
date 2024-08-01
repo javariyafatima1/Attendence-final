@@ -4,6 +4,7 @@ import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Logout from './Logout';
+import DashboardHeader from './headerdashbaordstudent';
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
   if (!userData) return <div>Loading...</div>;
   return (
     <div>
+        <DashboardHeader/>
       <Container>
     <Typography variant="h4" gutterBottom>Dashboard</Typography>
     <Typography>Welcome to the student Attendence portal!</Typography>
