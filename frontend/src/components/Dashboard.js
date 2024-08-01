@@ -19,7 +19,7 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
       headers: { Authorization: `Bearer ${token}` }
   });
   setUserData(response.data.user);
-}catch{
+}catch(error){
   console.error('Error user data:', error);
   if (error.response?.status === 401) {
       navigate('/login');          
