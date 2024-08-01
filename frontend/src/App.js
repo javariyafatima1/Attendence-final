@@ -16,9 +16,11 @@ import AdminLogin from './components/Adminlogin';
 function App() {
   const location = useLocation();
   const isDashboardRoute = ['/dashbord', '/addattendence', '/allatten'].includes(location.pathname);
+  const adminDashboardRoute = ['/admindashbord', '/viewallusers',].includes(location.pathname);
   return (
     <div>
       {isDashboardRoute ? <DashboardHeader/> : <Header />}
+      {adminDashboardRoute ? <AdminDashboardHeader/> : <Header />}
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
