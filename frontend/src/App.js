@@ -10,6 +10,7 @@ import CreateAtten from './components/CreateAtten';
 import AllAtten from './components/AllAtten';
 import AuthRoute from './components/AuthRoute';
 import DashboardHeader from './components/headerdashbaordstudent';
+import AdminSignup from './components/Adimsingup';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/adminsignup" element={<AdminSignup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashbord" element={<AuthRoute element={<Dashboard />} />} />
           <Route path="/addattendence" element={<AuthRoute element={<CreateAtten />} />} />

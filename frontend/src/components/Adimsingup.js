@@ -3,7 +3,7 @@ import {    useNavigate,Link} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
 import axios from "axios";
-const Signup = () => {
+const AdminSignup = () => {
   
   const navigate = useNavigate();
   const [sing, setsing] = useState({
@@ -71,4 +71,4 @@ const Signup = () => {
   );
 
 
-export default Signup;
+export default AdminSignup;
