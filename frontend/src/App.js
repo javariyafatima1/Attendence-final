@@ -12,6 +12,7 @@ import AuthRoute from './components/AuthRoute';
 import DashboardHeader from './components/headerdashbaordstudent';
 import AdminSignup from './components/Adimsingup';
 import AdminLogin from './components/Adminlogin';
+import AdminDashboardHeader from './components/AdminDashboardHeader';
 
 function App() {
   const location = useLocation();
