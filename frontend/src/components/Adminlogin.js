@@ -11,7 +11,7 @@ const AdminLogin = () => {
     
   
     const Login = async () => {
-     
+      navigate('/admindashbord');
       
       
        
@@ -54,6 +54,7 @@ const AdminLogin = () => {
       >
      Login
       </Button>
+      
           </Container>
           </div>
     );
