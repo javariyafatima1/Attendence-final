@@ -9,6 +9,13 @@ const markAttendance = async (req, res) => {
             attendance: savedAttendance,
         });
     }catch(error){
-
+        console.message(error.message)
+        res.status(500).send({
+            message: "Failed mark attendance",
+            error: e.message,
+        });
     }
+}
+module.exports = {
+    markAttendance,
 }
