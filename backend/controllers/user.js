@@ -1,7 +1,7 @@
 const bycrypt = require('bcrypt');
 const  jwt = require('jsonwebtoken');
 const userCheck = require('../schema/userscema')
-const  adminCheck = require('../schema/userscema')
+const adminCheck = require('../schema/adminscema')
 const signupUser = async (req, res) => {
     const { name, email, password } = req.body
     console.log("req body", req.body)
@@ -121,6 +121,7 @@ const Adminsignup = async (req, res) => {
 const adminlogin = async (req, res) => {
     const { email, password } = req.body
     console.log("req body", req.body)
+    console.log(adminCheck)
     try {
        
         const databaseUser = await adminCheck.findOne({ email });

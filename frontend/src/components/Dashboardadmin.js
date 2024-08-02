@@ -37,7 +37,7 @@ const response = await axios.get('http://localhost:1000/api/getadmindata', {
     <Typography>Welcome to the Admin Attendence portal!</Typography>
     
             <p>Welcome, {adminData.name}!</p>
-            <p>Email: {admin.email}</p>
+            <p>Email: {adminData.email}</p>
             <Logout/>
           
   </Container>
