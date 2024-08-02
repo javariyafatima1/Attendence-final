@@ -8,22 +8,50 @@ const AdminLogin = () => {
     email: "",
     password:"",
     });
+    const [error, setError] = useState("")
     
   
-    const Login = async () => {
-      navigate('/admindashbord');
+  
+      const Login = async () => {
+
+      if (sing.email === "" || sing.password === "") {
+        alert("All fields are required");
+        return;
+      }
+      try {
+        const res = await axios.post('http://localhost:1000/api/adminlogin', sing);
+        setsing({ email: "", password: "" , });
+        alert(" Admin login suceful")
+     console.log(res)
       
+       if (res.data.token) {
+        localStorage.setItem('token', res.data.token);
+        navigate('/admindashbord');
+       } else {
+         console.error('Token not received');
+       }
+      }catch(error){
+       console.error(error)
+       if (error.response && error.response.data) {
+        setError(error.response.data.message);
+        alert(error.response.data.message)
+      } else {
+        setError("Please try again");
+      }
+    }
       
-       
-    
-     
-    
       };
       const handleChange = (e) => {
         const { name, value } = e.target;
         setsing({ ...sing, [name]: value });
     }
 
+       
+  
+     
+    
+    
+      
     return (
         <div>
            <Container maxWidth="sm">
