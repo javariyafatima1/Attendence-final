@@ -21,8 +21,7 @@ function App() {
   const adminDashboardRoute = ['/admindashbord', '/viewallusers',].includes(location.pathname);
   return (
     <div>
-      {isDashboardRoute ? <DashboardHeader/> : <Header />}
-      {/* {adminDashboardRoute ? <AdminDashboardHeader/> : <Header />} */}
+      {adminDashboardRoute ? <AdminDashboardHeader /> : (isDashboardRoute ? <DashboardHeader /> : <Header />)}
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
