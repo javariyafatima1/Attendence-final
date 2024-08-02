@@ -13,10 +13,20 @@ const AdminSignup = () => {
     
 });
   const Singup = async () => {
-    
+    if (sing.email === "" || sing.password === "" || sing.name === "") {
+      alert("All fields are required");
+      return;
+    }
+       try{
+        const response = await axios.post('http://localhost:1000/api/adminsignup', sing);
+        alert("admin create")
+        setsing({ email: "", password: "" , name: "" });
+        console.log(response)
+       }catch(error){
+        console.error(error);
        }
-       
-   
+       navigate("/adminlogin")
+    };
     const handleChange = (e) => {
       const { name, value } = e.target;
       setsing({ ...sing, [name]: value });
