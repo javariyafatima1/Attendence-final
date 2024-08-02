@@ -29,24 +29,24 @@ const Home = () => {
       {/* Card Section */}
 
       <div className="card-section">
-        <h1 className="section-heading">Select Your Card</h1>
+        <h1 className="section-heading">Select Your Portal</h1>
         <div className="card-container">
           <Card className="custom-card" style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title>Student Card</Card.Title>
+              <Card.Title> Student</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Student Attendance Portal</Card.Subtitle>
               <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Singup Login,markAttendance,viewallattendence
               </Card.Text>
               <Card.Link href="/signup">Student Portal</Card.Link>
             </Card.Body>
           </Card>
           <Card className="custom-card" style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title>Admin Card</Card.Title>
+              <Card.Title>Admin</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Admin Attendance Portal</Card.Subtitle>
               <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Singup,Login,Dashbaord,Alluserdatashow,Logout
               </Card.Text>
               <Card.Link href="/adminsignup">Admin Portal</Card.Link>
             </Card.Body>
