@@ -157,12 +157,37 @@ const adminlogin = async (req, res) => {
         });
     }
 }
+const getAdminData = async (req, res) => {
+   
+    try {
+        const token = req.headers.authorization?.split(" ")[1];
+        if (!token) {
+            return res.status(401).send({ message: "No token provided" });
+        }
+        const decoded = jwt.verify(token, 'attendence');
+        const email = decoded.email;
+        const admin = await adminCheck.findOne({ email });
+        if (admin) {
+            res.status(200).send({
+                message: "Admin data retrieved successfully",
+                admin
+            });
+        } else {
+            res.status(404).send({ message: "Admin not found" });
+        }
+    
+} catch (e) {
+        console.error(e.message);
+        res.status(500).send({ message: e.message });
+    }
+};
 module.exports = {
     Adminsignup,
     adminlogin,
    signupUser,
     loginUser,
-    getUserData
+    getUserData,
+    getAdminData
    }; 
 
     
