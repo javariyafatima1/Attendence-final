@@ -6,7 +6,7 @@ const { signupUser, loginUser, getUserData,Adminsignup,adminlogin, getAdminData,
 router.post('/signup', signupUser)
 router.post('/login', loginUser)
 router.get('/getUserData', verifyToken, getUserData)
-router.get('/users', getAllUsers);
+router.get('/users', verifyToken, getAllUsers);
 router.post('/adminsignup', Adminsignup)
 router.post('/adminlogin', adminlogin)
 router.get('/getadmindata', verifyToken, getAdminData)

@@ -65,15 +65,15 @@ const Signup = () => {
         value={sing.password}
         onChange={handleChange}
       />
-      category
-       <select
-       value={sing.category}
-       onChange={handleChange}
-        >
-          <option value="">Select Category</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Web Development">Web Development</option>
-        </select>
+       <TextField
+        fullWidth
+        margin="normal"
+        label="category"
+        type="password"
+        name='category'
+        value={sing.category}
+        onChange={handleChange}
+      />
        <Button 
         variant="contained" 
         color="primary" 
