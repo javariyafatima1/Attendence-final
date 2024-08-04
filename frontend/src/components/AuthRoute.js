@@ -10,4 +10,5 @@ const AuthRoute = ({ element: Element }) => {
         <Navigate to="/login" state={{ from: location }} />
       );
     };
+
     export default AuthRoute;

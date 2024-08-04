@@ -9,18 +9,20 @@ const Signup = () => {
   const [sing, setsing] = useState({
     email: "",
     password:"",
-    name:""
+    name:"",
+    category :""
+    
     
 });
   const Singup = async () => {
-    if (sing.email === "" || sing.password === "" || sing.name === "") {
+    if (sing.email === "" || sing.password === "" || sing.name === ""||  sing.category === "") {
       alert("All fields are required");
       return;
     }
        try{
         const response = await axios.post('http://localhost:1000/api/signup', sing);
         alert("user create")
-        setsing({ email: "", password: "" , name: "" });
+        setsing({ email: "", password: "" , name: "",  category :""});
         console.log(response)
        }catch(error){
         console.error(error);
@@ -63,6 +65,15 @@ const Signup = () => {
         value={sing.password}
         onChange={handleChange}
       />
+      category
+       <select
+       value={sing.category}
+       onChange={handleChange}
+        >
+          <option value="">Select Category</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Web Development">Web Development</option>
+        </select>
        <Button 
         variant="contained" 
         color="primary" 

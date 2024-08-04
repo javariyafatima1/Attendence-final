@@ -3,14 +3,14 @@ const  jwt = require('jsonwebtoken');
 const userCheck = require('../schema/userscema')
 const adminCheck = require('../schema/adminscema')
 const signupUser = async (req, res) => {
-    const { name, email, password } = req.body
+    const { name, email, password,category } = req.body
     console.log("req body", req.body)
     try {
         const salt = await bycrypt.genSalt(10)
         console.log("salt", salt)
         const hashedPassword = await bycrypt.hash(password, salt)
         console.log("hashedPassword", hashedPassword)
-        const userCheckres = await userCheck({ email, name, password: hashedPassword })
+        const userCheckres = await userCheck({ email, name, password: hashedPassword,category })
         const saveRes = await userCheckres.save()
         console.log("saveRes", saveRes)
         res.send({
