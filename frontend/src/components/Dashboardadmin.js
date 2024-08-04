@@ -6,6 +6,8 @@ import Logout from './Logout';
 
 const Dashboardadmin = () => {
   const [adminData, setadminData] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,7 +31,21 @@ const response = await axios.get('http://localhost:1000/api/getadmindata', {
     }
     fetchadminData();
   },[navigate])
-  if (!adminData) return <div>Loading...</div>
+ 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:1000/api/users');
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+        setMessage('Error fetching users.');
+      }
+    };
+
+    fetchUsers();
+  }, []);
+   if (!adminData) return <div>Loading...</div>
   return (
     <div>
     <Container>
@@ -39,6 +55,7 @@ const response = await axios.get('http://localhost:1000/api/getadmindata', {
             <p>Welcome, {adminData.name}!</p>
             <p>Email: {adminData.email}</p>
             <Logout/>
+            <p>user: {users.name}</p>
           
   </Container>
     </div>

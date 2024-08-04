@@ -95,7 +95,6 @@ const getUserData = async (req, res) => {
 };
 const getAllUsers = async (req, res) => {
     try {
-      // Fetch all users from the database
       const users = await userCheck.find();
       res.json(users);
     } catch (error) {
