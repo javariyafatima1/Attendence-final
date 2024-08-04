@@ -68,6 +68,7 @@ const loginUser = async (req, res) => {
         });
     }
 }
+
 const getUserData = async (req, res) => {
    
         try {
@@ -92,6 +93,17 @@ const getUserData = async (req, res) => {
             res.status(500).send({ message: e.message });
         }
 };
+const getAllUsers = async (req, res) => {
+    try {
+      // Fetch all users from the database
+      const users = await userCheck.find();
+      res.json(users);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).send('Server Error');
+    }
+  };
+
 const Adminsignup = async (req, res) => {
     const { name, email, password } = req.body
     console.log("req body", req.body)
@@ -185,6 +197,7 @@ const getAdminData = async (req, res) => {
 module.exports = {
     Adminsignup,
     adminlogin,
+    getAllUsers,
    signupUser,
     loginUser,
     getUserData,
