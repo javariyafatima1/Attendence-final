@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 import {    useNavigate,Link} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
 import axios from "axios";
+
+
 const Signup = () => {
   
   const navigate = useNavigate();
@@ -65,6 +68,9 @@ const Signup = () => {
         value={sing.password}
         onChange={handleChange}
       />
+      
+      
+{/*       
        <TextField
         fullWidth
         margin="normal"
@@ -72,8 +78,21 @@ const Signup = () => {
         type="password"
         name='category'
         value={sing.category}
-        onChange={handleChange}
-      />
+          onChange={handleChange}
+          
+        /> */}
+        
+        <Form.Select size="lg" mt="2">
+        <option>Category</option>
+        <option>Graphics Designing</option>
+        <option>Web Developnment</option>
+        <option>Video Editing</option>
+        <option>3D Animation</option>
+        <option>Data Science</option>
+        </Form.Select>
+        
+        <br />
+        
        <Button 
         variant="contained" 
         color="primary" 
@@ -83,7 +102,7 @@ const Signup = () => {
      
     </Button>
     <Button>
-    <Link to="/login" className="nav-link">alredy singup to please login</Link>
+    <Link to="/login" className="nav-link">already singup to please login</Link>
     </Button>
 
    
@@ -91,5 +110,4 @@ const Signup = () => {
     </div>
   );
 }
-
 export default Signup;
