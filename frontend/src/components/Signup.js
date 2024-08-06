@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import './Signup.css';
+import { IoMail } from "react-icons/io5";
+import { FaLock } from "react-icons/fa6";
+import { FaUserAlt } from "react-icons/fa";
 import {    useNavigate,Link} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
@@ -38,13 +42,52 @@ const Signup = () => {
   }
   return (
     <div>
+      <div className="main-container">
+      
+      <div className= "login-container">
+        <h1 className="form-title">Sign up</h1>
+        <form action="#" className="login-form">
+          <div className="input-wrapper">
+            <FaUserAlt className='icon' />
+            <input
+              type="text"
+              placeholder='Username'
+              className="input-field"
+              required
+            />
+            </div>
+            
+          <div className="input-wrapper">
+            <IoMail className='icon' />
+            <input
+              type="email"
+              placeholder='Email Address'
+              className="input-field"
+              required
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <FaLock className='icon' />
+            <input
+              type="password"
+              placeholder='Password'
+              className="input-field"
+              required
+            />
+          </div>
+          <button className='login-button'>Sign up</button>
+        </form>
+
+        <br />
+
+        <p className="signup-text">Already have an account login <a href="#">Login</a></p>
 
 
 
 
 
-
-        <Container maxWidth="sm">
+        {/* <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom> Student Singup</Typography>
       <TextField
         fullWidth
@@ -112,10 +155,11 @@ const Signup = () => {
     </Button>
 
    
-     </Container>  
+     </Container>   */}
       
 
-
+      </div>
+      </div>
 
     </div>
   );
