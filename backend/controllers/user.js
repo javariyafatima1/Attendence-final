@@ -93,7 +93,8 @@ const getUserData = async (req, res) => {
             res.status(500).send({ message: e.message });
         }
 };
-const getAllUsers = async (req, res) => {
+
+  const getAllUsers = async (req, res) => {
     try {
       const users = await userCheck.find();
       res.json(users);
@@ -102,6 +103,20 @@ const getAllUsers = async (req, res) => {
       res.status(500).send('Server Error');
     }
   };
+  const getusercategory = async (req, res) => {
+    try {
+        const category = req.params.category;
+        const users = await userCheck.find({ category: category });
+    
+        if (users.length === 0) {
+          return res.status(404).json({ message: 'No users found for this category' });
+        }
+    
+        res.json(users);
+      } catch (err) {
+        res.status(500).json({ message: 'Server error' });
+      }
+  }
 
 const Adminsignup = async (req, res) => {
     const { name, email, password } = req.body
@@ -197,6 +212,7 @@ module.exports = {
     Adminsignup,
     adminlogin,
     getAllUsers,
+    getusercategory,
    signupUser,
     loginUser,
     getUserData,
