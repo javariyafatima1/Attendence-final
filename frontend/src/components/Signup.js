@@ -38,7 +38,13 @@ const Signup = () => {
   }
   return (
     <div>
-       <Container maxWidth="sm">
+
+
+
+
+
+
+        <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom> Student Singup</Typography>
       <TextField
         fullWidth
@@ -70,17 +76,17 @@ const Signup = () => {
       />
       
       
-{/*       
+      
        <TextField
         fullWidth
         margin="normal"
         label="category"
         type="password"
         name='category'
-        value={sing.category}
+        value={sing.category} // comment part 
           onChange={handleChange}
           
-        /> */}
+        />
         
         <Form.Select size="lg" mt="2">
         <option>Category</option>
@@ -106,7 +112,11 @@ const Signup = () => {
     </Button>
 
    
-     </Container>
+     </Container>  
+      
+
+
+
     </div>
   );
 }

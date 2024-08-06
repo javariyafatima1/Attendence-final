@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './Login.css';
+import { IoMail } from "react-icons/io5";
+import { FaLock } from "react-icons/fa6";
 import {    useNavigate,} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import axios from 'axios'
@@ -43,9 +46,56 @@ const Login = () => {
         setsing({ ...sing, [name]: value });
     }
 
-    return (
-        <div>
-           <Container maxWidth="sm">
+  return (
+       <div className="main-container">
+      
+      <div className= "login-container">
+        <h1 className="form-title">Login</h1>
+        <form action="#" className="login-form">
+          <div className="input-wrapper">
+            <IoMail className='icon' />
+            <input
+              type="email"
+              placeholder='Email Address'
+              className="input-field"
+              required
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <FaLock className='icon' />
+            <input
+              type="password"
+              placeholder='Password'
+              className="input-field"
+              required
+            />
+          </div>
+          <a href='#' className='forgot-password-link'>Forgot Password</a>
+
+          <button className='login-button'>Log In</button>
+        </form>
+
+        <br />
+
+        <p className="signup-text">Don't have an account? <a href="#">Signup now</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           {/* <Container maxWidth="sm">
           <Typography variant="h4" gutterBottom>Login</Typography>
           
           <TextField
@@ -73,7 +123,8 @@ const Login = () => {
       >
      Login
       </Button>
-          </Container>
+          </Container>  */}
+        </div>
           </div>
     );
   }
