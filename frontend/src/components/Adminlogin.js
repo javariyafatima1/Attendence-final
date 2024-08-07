@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { IoMail } from "react-icons/io5";
-import { TextField, Button, Container, Typography } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 import axios from "axios";
 import "./Adminlogin.css";
 const AdminLogin = () => {
@@ -78,13 +77,13 @@ const AdminLogin = () => {
           <Button
             className="btn"
             onClick={Login}
-            style={{ backgroundColor: '#0056b3' , color: '#fff' }}
+            style={{ backgroundColor: "#0056b3", color: "#fff" }}
           >
             Login
-
           </Button>
-          <p className="para">Don't have an account <a href="#">Signup</a></p>
-
+          <p className="para">
+            Don't have an account? <Link to="/adminSignup">Signup now</Link>
+          </p>
         </div>
       </div>
     </div>

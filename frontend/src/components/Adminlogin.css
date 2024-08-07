@@ -28,9 +28,6 @@
 .wrapper .title .input {
     height: 100%;
     width: 75px;
-    outline: none;
-    border-radius: 0.31rem;
-    border: 1px solid #6aabf0;
     padding: 0 1.25rem 0 3.12rem;
     box-sizing: border-box;
 }
@@ -48,4 +45,8 @@
 
 .para{
     margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
