@@ -22,9 +22,9 @@ useEffect(() => {
   }, [category]);
 
   return (
-    // <div>
-    // {error && <p>Error: {error}</p>}
-    // <ul>
+ 
+  
+   
     <TableContainer component={Paper}>
     <Table>
       <TableHead>
@@ -36,7 +36,7 @@ useEffect(() => {
       <TableBody>
       {users.map(user => (
         <li key={user._id} onClick={() => onUserClick(user._id)} className="clickable">
-          {user.name} - {user.email}
+          {user.name}
         </li>
       ))}
       </TableBody>

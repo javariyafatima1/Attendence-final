@@ -6,6 +6,23 @@
   height: 40vmin;
   pointer-events: none;
 }
+.button-style {
+  background-color: #4CAF50; /* Green background */
+  border: none;             /* Remove borders */
+  color: white;             /* White text */
+  padding: 10px 20px;       /* Add some padding */
+  text-align: center;       /* Center the text */
+  text-decoration: none;    /* Remove underline */
+  display: inline-block;    /* Get the block-level properties */
+  font-size: 16px;          /* Increase font size */
+  margin: 4px 2px;       
+  cursor: pointer;         
+  border-radius: 8px;       
+}
+
+.button-style:hover {
+  background-color: #45a049; 
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

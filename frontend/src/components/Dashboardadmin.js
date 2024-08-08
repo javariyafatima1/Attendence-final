@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Container, Typography } from '@mui/material';
+import './AdminDashboard.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Logout from './Logout';
@@ -22,18 +23,24 @@ const Dashboardadmin = () => {
   return (
     <div>
     <Container>
-    <Typography variant="h4" gutterBottom> Admin Dashboard</Typography>
+    <Typography> <h1>Admin Dashboard</h1></Typography>
     <Typography>Welcome to the Admin Attendence portal!</Typography>
-    
-         
-<div>
-  <h1>User Data</h1>
-  <button onClick={() => CategoryClick('GraphicDesign')}>Graphic Design</button>
-      <button onClick={() => CategoryClick('WebDevelopment')}>Web Development</button>
-      <button onClick={() => CategoryClick('Ai')}>Ai</button>
+   
+    <Typography> <h1 style={{marginTop:40}}>SMIT Enroll Student Show</h1></Typography>
+    <div style={{marginLeft:350,marginTop:30}}>
+    <button onClick={() => CategoryClick('GraphicDesign')} className="button-style">
+        Graphic Design
+      </button>
+      <button onClick={() => CategoryClick('WebDevelopment')} className="button-style">
+        Web Development
+      </button>
+      <button onClick={() => CategoryClick('Ai')} className="button-style">
+        AI
+      </button>
+      </div>
       {selectedCategory && !selectedUserId && <UsersByCategory category={selectedCategory} onUserClick={handleUserClick} />}
       {selectedUserId && <UserAttendance userId={selectedUserId} />}
-</div>
+
           
   </Container>
     </div>
