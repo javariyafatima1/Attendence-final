@@ -4,8 +4,9 @@ import axios from 'axios';
 const UsersByCategory = ({ category }) => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
+  
 
-  useEffect(() => {
+useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(`http://localhost:1000/api/users/${category}`);

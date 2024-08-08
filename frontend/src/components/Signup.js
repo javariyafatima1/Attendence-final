@@ -71,6 +71,7 @@ const Signup = () => {
         label="category"
         type="password"
         name='category'
+
         value={sing.category}
         onChange={handleChange}
       />
@@ -85,9 +86,7 @@ const Signup = () => {
     <Button>
     <Link to="/login" className="nav-link">alredy singup to please login</Link>
     </Button>
-
-   
-     </Container>
+</Container>
     </div>
   );
 }

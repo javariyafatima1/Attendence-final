@@ -7,7 +7,7 @@ const markAttendance = async (req, res) => {
         res.status(200).send({
             message: "Attendance marked successfully",
             attendance: savedAttendance,
-        });
+});
     }catch(e){
         console.message(e.message)
         res.status(500).send({
