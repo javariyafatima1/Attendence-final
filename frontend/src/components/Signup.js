@@ -21,7 +21,8 @@ const Signup = () => {
     
     
 });
-  const Singup = async () => {
+  const Singup = async (e) => {
+    e.preventDefault();
     if (sing.email === "" || sing.password === "" || sing.name === ""||  sing.category === "") {
       alert("All fields are required");
       return;
@@ -29,12 +30,15 @@ const Signup = () => {
        try{
         const response = await axios.post('http://localhost:1000/api/signup', sing);
         alert("user create")
+        
         setsing({ email: "", password: "" , name: "",  category :""});
         console.log(response)
+       
        }catch(error){
         console.error(error);
        }
        navigate("/login")
+    
     };
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -46,7 +50,7 @@ const Signup = () => {
       
       <div className= "login-container">
         <h1 className="form-title">Sign up</h1>
-        <form action="#" className="login-form">
+        <form className="login-form" onSubmit={Singup}>
           <div className="input-wrapper">
             <FaUserAlt className='icon' />
             <input
@@ -103,7 +107,7 @@ const Signup = () => {
 
                     </select>
                 </div>
-          <button className='login-button' onClick={Singup}>Sign up</button>
+          <button className='login-button' type='submit'>Sign up</button>
         </form>
 
         <br />

@@ -12,7 +12,8 @@ const Login = () => {
     });
     const [error, setError] = useState("")
   
-    const Login = async () => {
+    const Login = async (e) => {
+      e.preventDefault();
       if (sing.email === "" || sing.password === "") {
         alert("All fields are required");
         return;
@@ -50,7 +51,7 @@ const Login = () => {
       
       <div className= "login-container">
         <h1 className="form-title">Login</h1>
-        <form action="#" className="login-form">
+        <form  className="login-form" onSubmit={Login}>
           <div className="input-wrapper">
             <IoMail className='icon' />
             <input
@@ -78,7 +79,7 @@ const Login = () => {
           </div>
           <a href='#' className='forgot-password-link'>Forgot Password</a>
 
-          <button className='login-button'  onClick={Login}>Log In</button>
+          <button className='login-button' type='submit'>Log In</button>
         </form>
 
         <br />

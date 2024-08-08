@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
 
-      {/* Main Section */}
+   
 
       <div className="main-section">
         <div className="column1">
@@ -25,35 +25,31 @@ const Home = () => {
           />
         </div>
       </div>
-
-      {/* Card Section */}
-
       <div className="card-section">
         <h1 className="section-heading">Select Your Portal</h1>
         <div className="card-container">
-          <Card className="custom-card" style={{ width: '18rem' }}>
+          <Card className="custom-card">
             <Card.Body>
-              <Card.Title> Student</Card.Title>
+           
               <Card.Subtitle className="mb-2 text-muted">Student Attendance Portal</Card.Subtitle>
               <Card.Text>
-              Singup Login,markAttendance,viewallattendence
+                Signup, Login, Mark Attendance, View All Attendance
               </Card.Text>
               <Card.Link href="/signup">Student Portal</Card.Link>
             </Card.Body>
           </Card>
-          <Card className="custom-card" style={{ width: '18rem' }}>
+          <Card className="custom-card">
             <Card.Body>
-              <Card.Title>Admin</Card.Title>
+              
               <Card.Subtitle className="mb-2 text-muted">Admin Attendance Portal</Card.Subtitle>
               <Card.Text>
-              Singup,Login,Dashbaord,Alluserdatashow,Logout
+                Signup, Login, Dashboard, Show All User Data, Logout
               </Card.Text>
               <Card.Link href="/adminsignup">Admin Portal</Card.Link>
             </Card.Body>
           </Card>
         </div>
       </div>
-
 
       {/* Footer */}
       <footer className="footer">
