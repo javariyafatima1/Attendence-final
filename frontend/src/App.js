@@ -14,6 +14,7 @@ import AdminSignup from './components/AdminSingup';
 import AdminLogin from './components/Adminlogin';
 import AdminDashboardHeader from './components/AdminDashboardHeader';
 import Dashboardadmin from './components/Dashboardadmin';
+import View from './components/viewallStudent';
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
           <Route path="/dashbord" element={<AuthRoute element={<Dashboard />} />} />
           <Route path="/addattendence" element={<AuthRoute element={<CreateAtten />} />} />
           <Route path="/allatten" element={<AuthRoute element={<AllAtten />} />} />
+          <Route path="/viewallusers"  element={<View />} />
         </Routes>
       </div>
     </div>
