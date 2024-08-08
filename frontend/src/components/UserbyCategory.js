@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import axios from 'axios';
 
 const UsersByCategory = ({ category,onUserClick }) => {
@@ -20,16 +21,26 @@ useEffect(() => {
   }, [category]);
 
   return (
-    <div>
-    {error && <p>Error: {error}</p>}
-    <ul>
+    // <div>
+    // {error && <p>Error: {error}</p>}
+    // <ul>
+    <TableContainer component={Paper}>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Date</TableCell>
+          <TableCell>course</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
       {users.map(user => (
         <li key={user._id} onClick={() => onUserClick(user._id)}>
           {user.name} - {user.email}
         </li>
       ))}
-    </ul>
-  </div>
+      </TableBody>
+    </Table>
+  </TableContainer>
   );
 };
 

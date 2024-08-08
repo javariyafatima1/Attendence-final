@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import axios from 'axios';
 
 const UserAttendance = ({userId}) => {
@@ -8,8 +9,13 @@ const UserAttendance = ({userId}) => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/at/attendance/${userId}`);
-        setAttendance(response.data);
+        const response = await axios.get(`http://localhost:1000/at/attendance/${userId}`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}` 
+          }
+        });
+        setAttendance(response.data.attendanceRecords);
+       
       } catch (err) {
         setError(err.response ? err.response.data.message : 'Server error');
       }
@@ -19,15 +25,24 @@ const UserAttendance = ({userId}) => {
   }, [userId]);
 
   return (
-    <div>
-      {error && <p>Error: {error}</p>}
-      <h2>Attendance Records</h2>
-      <ul>
-        {attendance.map(record => (
-          <li key={record._id}>{record.date}: {record.status}</li>
-        ))}
-      </ul>
-    </div>
+    <TableContainer component={Paper}>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Date</TableCell>
+          <TableCell>course</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+      {attendance.map(record => (
+            <TableRow key={record._id}>
+              <TableCell>{new Date(record.date).toLocaleDateString()}</TableCell>
+              <TableCell>{record.course}</TableCell>
+            </TableRow>
+          ))}
+      </TableBody>
+    </Table>
+  </TableContainer>
   );
 };
 
