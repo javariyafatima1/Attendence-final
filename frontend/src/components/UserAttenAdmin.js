@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const UserAttendance = ({  studentId }) => {
+const UserAttendance = ({userId}) => {
   const [attendance, setAttendance] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/at/attendance/${ studentId}`);
+        const response = await axios.get(`http://localhost:1000/at/attendance/${userId}`);
         setAttendance(response.data);
       } catch (err) {
         setError(err.response ? err.response.data.message : 'Server error');

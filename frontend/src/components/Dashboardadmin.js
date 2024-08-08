@@ -4,12 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Logout from './Logout';
 import UsersByCategory from './UserbyCategory';
+import UserAttendance from './UserAttenAdmin';
 
 const Dashboardadmin = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
   const CategoryClick = (category) => {
     setSelectedCategory(category);
+    setSelectedUserId(null); 
+  };
+  const handleUserClick = (userId) => {
+    setSelectedUserId(userId);
   };
 
 
@@ -22,10 +28,10 @@ const Dashboardadmin = () => {
          
 <div>
   <h1>User Data</h1>
-<button onClick={() => CategoryClick('GraphicDesign')}>Graphic Design</button>
-      <button onClick={() => CategoryClick('Ai')}>Ai</button>
-      <button onClick={() => CategoryClick('WebDevelopment')}>Web Development</button>
-{selectedCategory && <UsersByCategory category={selectedCategory} />}
+  <button onClick={() => CategoryClick('graphicdesign')}>Graphic Design</button>
+      <button onClick={() => CategoryClick('webdevelopment')}>Web Development</button>
+      {selectedCategory && !selectedUserId && <UsersByCategory category={selectedCategory} onUserClick={handleUserClick} />}
+      {selectedUserId && <UserAttendance userId={selectedUserId} />}
 </div>
           
   </Container>
