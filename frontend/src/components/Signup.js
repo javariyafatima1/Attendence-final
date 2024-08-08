@@ -88,6 +88,7 @@ const Signup = () => {
             />
           </div>
           <div>
+            
             <label>Category</label>
                     <select
                         value={sing.category}

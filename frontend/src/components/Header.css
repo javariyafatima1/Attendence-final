@@ -27,7 +27,7 @@
   color: #0278b8; 
   padding: 10px 15px; 
 
-  transition: color 0.3s ease; 
+  
 }
 
 .navbar-custom .nav-link:hover {
@@ -41,11 +41,11 @@
 
 
 .navbar-custom .navbar-toggler {
-  border-color: #ffffff;
+  border-color: rgb(13, 7, 7);
 }
 
 .navbar-custom .navbar-toggler-icon {
-  background-color: #ffffff; }
+  background-color: #fffcfc; }
 
 
 .navbar-custom .navbar-collapse {
