@@ -29,15 +29,20 @@ const UserAttendance = ({userId}) => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Date</TableCell>
-          <TableCell>course</TableCell>
+          <TableCell>All Attendance Record</TableCell>
+        </TableRow>
+        <TableRow>
+
+          <TableCell >Date</TableCell>
+          <TableCell>Absent</TableCell>
+          <TableCell>Present</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
       {attendance.map(record => (
             <TableRow key={record._id}>
               <TableCell>{new Date(record.date).toLocaleDateString()}</TableCell>
-              <TableCell>{record.course}</TableCell>
+            
             </TableRow>
           ))}
       </TableBody>
