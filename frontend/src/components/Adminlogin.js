@@ -22,7 +22,7 @@ const AdminLogin = () => {
         sing
       );
       setsing({ email: "", password: "" });
-      alert(" Admin login suceful");
+      alert(" Admin login successfully");
       console.log(res);
 
       if (res.data.token) {
