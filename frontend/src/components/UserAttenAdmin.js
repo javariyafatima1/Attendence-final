@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import './AllAtten.css';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import axios from 'axios';
 
 const UserAttendance = ({userId}) => {
   const [attendance, setAttendance] = useState([]);
-  const [error, setError] = useState(null);
 
+  const [error, setError] = useState(null);
+  const totalDays = 30;
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
@@ -23,6 +25,8 @@ const UserAttendance = ({userId}) => {
 
     fetchAttendance();
   }, [userId]);
+  const daysPresent = attendance.length;
+  const daysAbsent = totalDays - daysPresent;
 
   return (
     <TableContainer component={Paper}>
@@ -34,14 +38,16 @@ const UserAttendance = ({userId}) => {
         <TableRow>
 
           <TableCell >Date</TableCell>
-          <TableCell>Absent</TableCell>
           <TableCell>Present</TableCell>
+          <TableCell>Absent</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
       {attendance.map(record => (
             <TableRow key={record._id}>
               <TableCell>{new Date(record.date).toLocaleDateString()}</TableCell>
+              <TableCell> {daysPresent}</TableCell>
+              <TableCell className={'highlightAbsentCell'}> {daysAbsent}</TableCell>
             
             </TableRow>
           ))}
