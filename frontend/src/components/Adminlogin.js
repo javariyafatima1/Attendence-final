@@ -50,7 +50,7 @@ const AdminLogin = () => {
     <div>
       <div className="main-container">
         <div className="wrapper">
-          <h1 className="title">Admin Login</h1>
+          <h1 className="main-title">Admin Login</h1>
           <div>
             <TextField
               className="input"
