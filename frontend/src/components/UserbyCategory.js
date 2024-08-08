@@ -29,15 +29,23 @@ useEffect(() => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Date</TableCell>
+          <TableCell>StudentName</TableCell>
           <TableCell>course</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
       {users.map(user => (
+        <TableRow>
+<TableCell>
+    
         <li key={user._id} onClick={() => onUserClick(user._id)} className="clickable">
           {user.name}
+          
         </li>
+        </TableCell>
+        <TableCell>{user.category}</TableCell>
+        </TableRow>
+       
       ))}
       </TableBody>
     </Table>
