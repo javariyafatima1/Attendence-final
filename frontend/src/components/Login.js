@@ -3,7 +3,6 @@ import './Login.css';
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import {    useNavigate,} from "react-router-dom";
-import { TextField, Button, Container, Typography } from '@mui/material';
 import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
@@ -55,30 +54,36 @@ const Login = () => {
           <div className="input-wrapper">
             <IoMail className='icon' />
             <input
-              type="email"
-              placeholder='Email Address'
+            placeholder='Email Address'
               className="input-field"
               required
+              type="name"
+              name='email'
+              value={sing.email}
+              onChange={handleChange}
             />
           </div>
 
           <div className="input-wrapper">
             <FaLock className='icon' />
             <input
-              type="password"
-              placeholder='Password'
+           placeholder='Password'
               className="input-field"
               required
+              type="password"
+              name='password'
+            value={sing.password}
+             onChange={handleChange}
             />
           </div>
           <a href='#' className='forgot-password-link'>Forgot Password</a>
 
-          <button className='login-button'>Log In</button>
+          <button className='login-button'  onClick={Login}>Log In</button>
         </form>
 
         <br />
 
-        <p className="signup-text">Don't have an account? <a href="#">Signup now</a></p>
+        <p className="signup-text">Don't have an account? <a href="signup">Signup now</a></p>
 
 
 
@@ -92,38 +97,8 @@ const Login = () => {
 
 
 
-
-
-
-           {/* <Container maxWidth="sm">
-          <Typography variant="h4" gutterBottom>Login</Typography>
-          
-          <TextField
-           fullWidth
-           margin="normal"
-           label="Email"
-           type="email"
-           name='email'
-           value={sing.email}
-           onChange={handleChange}
-          />
-         <TextField
-        fullWidth
-        margin="normal"
-        label="Password"
-        type="password"
-        name='password'
-        value={sing.password}
-        onChange={handleChange}
-      />
-          <Button 
-        variant="contained" 
-        color="primary" 
-        onClick={Login}
-      >
-     Login
-      </Button>
-          </Container>  */}
+     
+     
         </div>
           </div>
     );

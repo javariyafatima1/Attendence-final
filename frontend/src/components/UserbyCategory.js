@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const UsersByCategory = ({ category }) => {
+const UsersByCategory = ({ category,onUserClick }) => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
   
@@ -21,13 +21,15 @@ useEffect(() => {
 
   return (
     <div>
-      {error && <p>Error: {error}</p>}
-      <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.name}</li>
-        ))}
-      </ul>
-    </div>
+    {error && <p>Error: {error}</p>}
+    <ul>
+      {users.map(user => (
+        <li key={user._id} onClick={() => onUserClick(user._id)}>
+          {user.name} - {user.email}
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 };
 

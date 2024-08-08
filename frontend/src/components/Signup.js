@@ -102,12 +102,12 @@ const Signup = () => {
 
                     </select>
                 </div>
-          <button className='login-button' onClick={ Singup}>Sign up</button>
+          <button className='login-button' onClick={Singup}>Sign up</button>
         </form>
 
         <br />
 
-        <p className="signup-text">Already have an account login <a href="#">Login</a></p>
+        <p className="signup-text">Already have an account login <a href="/login">Login</a></p>
 
 
 
