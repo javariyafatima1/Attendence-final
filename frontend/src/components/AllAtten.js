@@ -4,9 +4,11 @@ import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './AllAtten.css';
+import { red } from '@mui/material/colors';
 const AllAtten  = () =>  {
   const [attendanceRecords, setAttendanceRecords] = useState([]);
   const [message, setMessage] = useState('');
+  const totalDays = 30;
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -36,18 +38,28 @@ const AllAtten  = () =>  {
       setMessage("error view all attendence ")
     }
   }
+  const daysPresent = attendanceRecords.length;
+  const daysAbsent = totalDays - daysPresent;
   return (
     <div>
         <Container>
         <h1>Attendance Records</h1>
         {message && <p>{message}</p>}
       <Typography variant="h4" gutterBottom> 30 Day Attendance Show</Typography>
+      <Typography variant="h6" align="right">
+                  Total Days Present: {daysPresent}
+                </Typography>
+                <Typography variant="h6" align="right">
+                  Total Days Absent: {daysAbsent}
+                </Typography>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell>Date</TableCell>
               <TableCell>course</TableCell>
+              <TableCell>Present</TableCell>
+              <TableCell>Absent</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -55,6 +67,8 @@ const AllAtten  = () =>  {
                 <TableRow key={record._id}>
                   <TableCell>{new Date(record.date).toLocaleDateString()}</TableCell>
                   <TableCell>{record.course}</TableCell>
+                <TableCell> {daysPresent}</TableCell>
+                <TableCell className={'highlightAbsentCell'}> {daysAbsent}</TableCell>
                 </TableRow>
               ))}
           </TableBody>

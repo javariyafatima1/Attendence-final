@@ -2,3 +2,8 @@
     background-color: #ef8787; 
     color: #ffffff; 
   }
+  .highlightAbsentCell {
+    background-color: #f8d7da; /* Light red background for absent cells */
+    color: #721c24; /* Dark red text color for contrast */
+    font-weight: bold; /* Make text bold for emphasis */
+  }
