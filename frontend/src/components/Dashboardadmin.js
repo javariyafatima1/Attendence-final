@@ -30,6 +30,7 @@ const Dashboardadmin = () => {
   <h1>User Data</h1>
   <button onClick={() => CategoryClick('GraphicDesign')}>Graphic Design</button>
       <button onClick={() => CategoryClick('WebDevelopment')}>Web Development</button>
+      <button onClick={() => CategoryClick('Ai')}>Ai</button>
       {selectedCategory && !selectedUserId && <UsersByCategory category={selectedCategory} onUserClick={handleUserClick} />}
       {selectedUserId && <UserAttendance userId={selectedUserId} />}
 </div>
