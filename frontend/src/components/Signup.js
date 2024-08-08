@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import './Signup.css';
+import { IoMail } from "react-icons/io5";
+import { FaLock } from "react-icons/fa6";
+import { FaUserAlt } from "react-icons/fa";
 import {    useNavigate,Link} from "react-router-dom";
 import { TextField, Button, Container, Typography } from '@mui/material';
 import CardText from 'react-bootstrap/esm/CardText';
 import axios from "axios";
+
+
 const Signup = () => {
   
   const navigate = useNavigate();
@@ -35,7 +42,52 @@ const Signup = () => {
   }
   return (
     <div>
-       <Container maxWidth="sm">
+      <div className="main-container">
+      
+      <div className= "login-container">
+        <h1 className="form-title">Sign up</h1>
+        <form action="#" className="login-form">
+          <div className="input-wrapper">
+            <FaUserAlt className='icon' />
+            <input
+              type="text"
+              placeholder='Username'
+              className="input-field"
+              required
+            />
+            </div>
+            
+          <div className="input-wrapper">
+            <IoMail className='icon' />
+            <input
+              type="email"
+              placeholder='Email Address'
+              className="input-field"
+              required
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <FaLock className='icon' />
+            <input
+              type="password"
+              placeholder='Password'
+              className="input-field"
+              required
+            />
+          </div>
+          <button className='login-button'>Sign up</button>
+        </form>
+
+        <br />
+
+        <p className="signup-text">Already have an account login <a href="#">Login</a></p>
+
+
+
+
+
+        {/* <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom> Student Singup</Typography>
       <TextField
         fullWidth
@@ -65,16 +117,38 @@ const Signup = () => {
         value={sing.password}
         onChange={handleChange}
       />
+      
+      
+      
        <TextField
         fullWidth
         margin="normal"
         label="category"
         type="password"
         name='category'
+<<<<<<< HEAD
 
         value={sing.category}
         onChange={handleChange}
       />
+=======
+        value={sing.category} // comment part 
+          onChange={handleChange}
+          
+        />
+        
+        <Form.Select size="lg" mt="2">
+        <option>Category</option>
+        <option>Graphics Designing</option>
+        <option>Web Developnment</option>
+        <option>Video Editing</option>
+        <option>3D Animation</option>
+        <option>Data Science</option>
+        </Form.Select>
+        
+        <br />
+        
+>>>>>>> 944a12deab88fea7804f1a340cce945a97a43b37
        <Button 
         variant="contained" 
         color="primary" 
@@ -84,11 +158,21 @@ const Signup = () => {
      
     </Button>
     <Button>
-    <Link to="/login" className="nav-link">alredy singup to please login</Link>
+    <Link to="/login" className="nav-link">already singup to please login</Link>
     </Button>
+<<<<<<< HEAD
 </Container>
+=======
+
+   
+     </Container>   */}
+      
+
+      </div>
+      </div>
+
+>>>>>>> 944a12deab88fea7804f1a340cce945a97a43b37
     </div>
   );
 }
-
 export default Signup;

@@ -10,7 +10,7 @@ import CreateAtten from './components/CreateAtten';
 import AllAtten from './components/AllAtten';
 import AuthRoute from './components/AuthRoute';
 import DashboardHeader from './components/headerdashbaordstudent';
-import AdminSignup from './components/Adimsingup';
+import AdminSignup from './components/AdminSingup';
 import AdminLogin from './components/Adminlogin';
 import AdminDashboardHeader from './components/AdminDashboardHeader';
 import Dashboardadmin from './components/Dashboardadmin';
@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/adminsignup" element={<AdminSignup />} />
+          <Route path="/adminSignup" element={<AdminSignup />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/admindashbord" element={<Dashboardadmin />} />
           <Route path="/dashbord" element={<AuthRoute element={<Dashboard />} />} />
