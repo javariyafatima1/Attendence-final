@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import './UserCategory.css';
 import axios from 'axios';
 
 const UsersByCategory = ({ category,onUserClick }) => {
@@ -34,7 +35,7 @@ useEffect(() => {
       </TableHead>
       <TableBody>
       {users.map(user => (
-        <li key={user._id} onClick={() => onUserClick(user._id)}>
+        <li key={user._id} onClick={() => onUserClick(user._id)} className="clickable">
           {user.name} - {user.email}
         </li>
       ))}
