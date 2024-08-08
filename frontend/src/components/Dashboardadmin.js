@@ -28,8 +28,8 @@ const Dashboardadmin = () => {
          
 <div>
   <h1>User Data</h1>
-  <button onClick={() => CategoryClick('graphicdesign')}>Graphic Design</button>
-      <button onClick={() => CategoryClick('webdevelopment')}>Web Development</button>
+  <button onClick={() => CategoryClick('GraphicDesign')}>Graphic Design</button>
+      <button onClick={() => CategoryClick('WebDevelopment')}>Web Development</button>
       {selectedCategory && !selectedUserId && <UsersByCategory category={selectedCategory} onUserClick={handleUserClick} />}
       {selectedUserId && <UserAttendance userId={selectedUserId} />}
 </div>

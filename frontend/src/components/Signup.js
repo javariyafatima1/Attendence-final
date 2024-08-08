@@ -54,29 +54,55 @@ const Signup = () => {
               placeholder='Username'
               className="input-field"
               required
+              name='name'
+            value={sing.name}
+            onChange={handleChange}
             />
             </div>
             
           <div className="input-wrapper">
             <IoMail className='icon' />
             <input
-              type="email"
+             
               placeholder='Email Address'
               className="input-field"
               required
+              name="email"
+              type="text"
+              value={sing.email}
+              onChange={handleChange}
             />
           </div>
 
           <div className="input-wrapper">
             <FaLock className='icon' />
             <input
-              type="password"
+              
               placeholder='Password'
               className="input-field"
               required
+              type="password"
+              name='password'
+              value={sing.password}
+              onChange={handleChange}
             />
           </div>
-          <button className='login-button'>Sign up</button>
+          <div>
+            <label>Category</label>
+                    <select
+                        value={sing.category}
+                        onChange={handleChange}
+                        name='category'
+                      
+                    >
+                        <option value="">Select category</option>
+                        <option value="WebDevelopment">Web Development</option>
+                        <option value="GraphicDesign">Graphic Design</option>
+                        <option value="Ai">Ai</option>
+
+                    </select>
+                </div>
+          <button className='login-button' onClick={ Singup}>Sign up</button>
         </form>
 
         <br />
@@ -87,91 +113,14 @@ const Signup = () => {
 
 
 
-        {/* <Container maxWidth="sm">
-      <Typography variant="h4" gutterBottom> Student Singup</Typography>
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Name"
-        name='name'
-        
-        type="text"
-        value={sing.name}
-        onChange={handleChange}
-      />
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Email"
-        name="email"
-        type="email"
-        value={sing.email}
-        onChange={handleChange}
-      />
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Password"
-        type="password"
-        name='password'
-        value={sing.password}
-        onChange={handleChange}
-      />
       
-      
-      
-       <TextField
-        fullWidth
-        margin="normal"
-        label="category"
-        type="password"
-        name='category'
-<<<<<<< HEAD
-
-        value={sing.category}
-        onChange={handleChange}
-      />
-=======
-        value={sing.category} // comment part 
-          onChange={handleChange}
-          
-        />
-        
-        <Form.Select size="lg" mt="2">
-        <option>Category</option>
-        <option>Graphics Designing</option>
-        <option>Web Developnment</option>
-        <option>Video Editing</option>
-        <option>3D Animation</option>
-        <option>Data Science</option>
-        </Form.Select>
-        
-        <br />
-        
->>>>>>> 944a12deab88fea7804f1a340cce945a97a43b37
-       <Button 
-        variant="contained" 
-        color="primary" 
-        onClick={ Singup}
-      >
-     Singup 
      
-    </Button>
-    <Button>
-    <Link to="/login" className="nav-link">already singup to please login</Link>
-    </Button>
-<<<<<<< HEAD
-</Container>
-=======
-
+        
    
-     </Container>   */}
-      
 
       </div>
       </div>
 
->>>>>>> 944a12deab88fea7804f1a340cce945a97a43b37
     </div>
   );
 }
