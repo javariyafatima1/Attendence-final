@@ -2,7 +2,10 @@ import axios from 'axios';
 import React, { useState ,useEffect} from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import './CreateAtten.css';
 import { TextField, Button, Container, Typography, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
+
+
 const CreateAtten = () => {
   const navigate = useNavigate();
   const [studentId, setStudentId] = useState('');
@@ -42,40 +45,44 @@ const CreateAtten = () => {
     }
   }
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h4" gutterBottom>Mark Attendance</Typography>
+    <div className='atten-container'>
+    <div className="atten-wrap">
+      <h1 className='atten-title'>Mark Attendance</h1>
       <TextField
-        fullWidth
-        margin="normal"
-        label="Student ID"
-        value={studentId}
+          className='atten-field'
+          label="Student ID"
+          value={studentId}
+          style={{ width: "355px" }}
         readOnly
-      />
+        />
+        <br />
+        <br />
       <TextField
-        fullWidth
-        margin="normal"
+        className='atten-field'
         type="date"
         label="Date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
         required
-        InputLabelProps={{ shrink: true }}
+          InputLabelProps={{ shrink: true }}
+          style={{ width: "355px" }}
       />
-      
-       
+      <br />
+      <br />
       <div>
             <label>Course:</label>
                     <select
                         value={course}
                         onChange={(e) => setCourse(e.target.value)}
-                        required
+            required
                     >
                         <option value="">Select Course</option>
                         <option value="Web Development">Web Development</option>
                         <option value="Graphic Design">Graphic Design</option>
-                        <option value="AI">AI</option>
+                        <option value="AI">ARtificial Intelligence</option>
                     </select>
-                </div>
+        </div>
+        <br />
       <Button 
         variant="contained" 
         color="primary" 
@@ -83,7 +90,8 @@ const CreateAtten = () => {
       >
       Attendance Mark
       </Button>
-    </Container>
+      </div>
+      </div>
   );
 }
 
