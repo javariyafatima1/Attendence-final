@@ -109,3 +109,37 @@ a:hover {
 p {
     text-align: center;
 }
+
+.select-container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.select-container select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.select-container select:focus {
+    border-color: #6aabf0; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    outline: none;
+}
+
+.select-container select:hover {
+    border-color: #6aabf0; 
+}
+
+.select-container select option {
+    padding: 10px;
+}
+
