@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import axios from 'axios'
 import Logout from './Logout';
-import './Dashboard.css';
+import { blueGrey } from '@mui/material/colors';
+
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -34,7 +35,7 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
   },[navigate])
   if (!userData) return <div>Loading...</div>;
   return (
-<<<<<<< HEAD
+
     <div>
   
       <div className="dashboard">
@@ -56,25 +57,9 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
   </div>
  
     </div>
-=======
-    <div className="container">
-    <Container>
-      <Typography className="dashboard-title">
-        Dashboard
-      </Typography>
-      <Typography className="welcome-message">
-        Welcome to the student Attendance portal!
-      </Typography>
-      <p className="user-info">Welcome, {userData.name}!</p>
-      <p className="user-info">Email: {userData.email}</p>
-      <p className="user-info">Student ID: {userData._id}</p>
-      <div className="logout-button">
-        <Logout />
-      </div>
-      <AllAtten />
-    </Container>
-  </div>
->>>>>>> 42f959fe26bbb6294641d9c76f34e9cf3ac0d312
+
+    
+
   );
 }
 
