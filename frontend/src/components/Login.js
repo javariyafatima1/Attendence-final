@@ -21,7 +21,7 @@ const Login = () => {
       try {
         const res = await axios.post('http://localhost:1000/api/login', sing);
         setsing({ email: "", password: "" , });
-        alert("login suceful")
+        alert("Login Successfully")
      console.log(res)
       
        if (res.data.token) {

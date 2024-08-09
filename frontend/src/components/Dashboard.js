@@ -6,6 +6,9 @@ import './Dashboard.css';
 import axios from 'axios';
 import Logout from './Logout';
 
+import { blueGrey } from '@mui/material/colors';
+
+
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
@@ -36,7 +39,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-         <div className='dashboard'>
+      <div className='dashboard'>
         <h1 className="dashboard-title">Dashboard</h1>
         <p className="dashboard-para">
           Welcome to the student Attendance portal!
@@ -44,12 +47,19 @@ const Dashboard = () => {
         <p className="main-user">Welcome, {userData.name}!</p>
         <p className="user">Email: {userData.email}</p>
         <p className="user">Student ID: {userData._id}</p>
-        <AllAtten />
-        <div className="btn-container">
-          <Logout />
+
+            <AllAtten />
+            <div className="btn-container">
+              <Logout />
+
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
+
+    
+
+
   );
 };
 
