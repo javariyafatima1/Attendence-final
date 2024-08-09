@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './AllAtten.css';
+import UsersByCategory from './UserbyCategory';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import axios from 'axios';
+
 
 const UserAttendance = ({userId}) => {
   const [attendance, setAttendance] = useState([]);
@@ -33,7 +35,7 @@ const UserAttendance = ({userId}) => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>All Attendance Record</TableCell>
+          <TableCell>All Attendance Record {userId}</TableCell>
         </TableRow>
         <TableRow>
 

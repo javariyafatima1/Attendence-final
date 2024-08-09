@@ -1,3 +1,4 @@
+
 .dashboard {
     margin: auto;
     font-family: 'Montserrat', sans-serif;
@@ -75,3 +76,27 @@ button:hover {
         margin-bottom: 10px;
     }
 }
+.container {
+    margin-top: 20px;
+  }
+  
+  .dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f60000;
+  }
+  
+  .welcome-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .user-info {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .logout-button {
+    margin-top: 20px;
+  }
+
