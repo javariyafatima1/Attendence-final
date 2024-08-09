@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Container, Typography } from '@mui/material';
 import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
+import './Dashboard.css';
 import axios from 'axios'
 import Logout from './Logout';
 
@@ -32,21 +33,23 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
   },[navigate])
   if (!userData) return <div>Loading...</div>;
   return (
-    <div>
-  
-      <Container>
-    <Typography variant="h4" gutterBottom>Dashboard</Typography>
-    <Typography>Welcome to the student Attendence portal!</Typography>
-    
-            <p>Welcome, {userData.name}!</p>
-            <p>Email: {userData.email}</p>
-            <p>Student ID: {userData._id}</p>
-            <Logout/>
-            <AllAtten/>
-            
-  </Container>
- 
-    </div>
+    <div className="container">
+    <Container>
+      <Typography className="dashboard-title">
+        Dashboard
+      </Typography>
+      <Typography className="welcome-message">
+        Welcome to the student Attendance portal!
+      </Typography>
+      <p className="user-info">Welcome, {userData.name}!</p>
+      <p className="user-info">Email: {userData.email}</p>
+      <p className="user-info">Student ID: {userData._id}</p>
+      <div className="logout-button">
+        <Logout />
+      </div>
+      <AllAtten />
+    </Container>
+  </div>
   );
 }
 
