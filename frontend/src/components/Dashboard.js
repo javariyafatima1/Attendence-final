@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Typography } from '@mui/material';
 import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
-import axios from 'axios'
+import axios from 'axios';
 import Logout from './Logout';
-import './Dashboard.css';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -15,67 +14,43 @@ const Dashboard = () => {
     const fetchUserData = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
-        navigate('/login'); 
+        navigate('/login');
         return;
-    }
-    try{
-const response = await axios.get('http://localhost:1000/api/getUserData', {
-      headers: { Authorization: `Bearer ${token}` }
-  });
-  setUserData(response.data.user);
-}catch(error){
-  console.error('Error user data:', error);
-  if (error.response?.status === 401) {
-      navigate('/login');          
-     }
-}
-    }
+      }
+      try {
+        const response = await axios.get('http://localhost:1000/api/getUserData', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUserData(response.data.user);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        if (error.response?.status === 401) {
+          navigate('/login');
+        }
+      }
+    };
     fetchUserData();
-  },[navigate])
+  }, [navigate]);
+
   if (!userData) return <div>Loading...</div>;
+
   return (
-<<<<<<< HEAD
-    <div>
-  
-      <div className="dashboard">
-    <h1 className="dashboard-title">Dashboard</h1>
-    <p className="dashboard-para">Welcome to the student Attendence portal!</p>
-    
-            <p className="main-user">Welcome, {userData.name}!</p>
-            <p className="user">Email: {userData.email}</p>
-            <p className="user">Student ID: {userData._id}</p>
-           
-        
-
+    <div className="dashboard-container">
+         <div className='dashboard'>
+        <h1 className="dashboard-title">Dashboard</h1>
+        <p className="dashboard-para">
+          Welcome to the student Attendance portal!
+        </p>
+        <p className="main-user">Welcome, {userData.name}!</p>
+        <p className="user">Email: {userData.email}</p>
+        <p className="user">Student ID: {userData._id}</p>
         <AllAtten />
-
-        <div className='btn-container'>
+        <div className="btn-container">
           <Logout />
-          </div>
-            
-  </div>
- 
-    </div>
-=======
-    <div className="container">
-    <Container>
-      <Typography className="dashboard-title">
-        Dashboard
-      </Typography>
-      <Typography className="welcome-message">
-        Welcome to the student Attendance portal!
-      </Typography>
-      <p className="user-info">Welcome, {userData.name}!</p>
-      <p className="user-info">Email: {userData.email}</p>
-      <p className="user-info">Student ID: {userData._id}</p>
-      <div className="logout-button">
-        <Logout />
+        </div>
       </div>
-      <AllAtten />
-    </Container>
-  </div>
->>>>>>> 42f959fe26bbb6294641d9c76f34e9cf3ac0d312
+    </div>
   );
-}
+};
 
 export default Dashboard;
