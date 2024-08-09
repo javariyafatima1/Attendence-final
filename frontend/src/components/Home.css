@@ -156,4 +156,55 @@
     }
 }
 
+@media (max-width: 576px) {
+  .main-section {
+      flex-direction: column;
+      align-items: center;
+  }
 
+  .heading, .para1 {
+      margin-left: 0;
+      text-align: center;
+  }
+
+  .heading {
+      font-size: 1.2rem;
+  }
+
+  .para1 {
+      font-size: 13px;
+  }
+
+  .image1 {
+      width: 90%;
+      margin-left: 0;
+  }
+
+  .card-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .custom-card {
+      width: 100%;
+      max-width: 18rem;
+  }
+
+  .footer {
+      padding: 15px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+      font-size: 1rem;
+  }
+
+  .para1 {
+      font-size: 12px;
+  }
+
+  .custom-card {
+      width: 100%;
+  }
+}
