@@ -4,6 +4,7 @@ import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Logout from './Logout';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -34,17 +35,23 @@ const response = await axios.get('http://localhost:1000/api/getUserData', {
   return (
     <div>
   
-      <Container>
-    <Typography variant="h4" gutterBottom>Dashboard</Typography>
-    <Typography>Welcome to the student Attendence portal!</Typography>
+      <div className="dashboard">
+    <h1 className="dashboard-title">Dashboard</h1>
+    <p className="dashboard-para">Welcome to the student Attendence portal!</p>
     
-            <p>Welcome, {userData.name}!</p>
-            <p>Email: {userData.email}</p>
-            <p>Student ID: {userData._id}</p>
-            <Logout/>
-            <AllAtten/>
+            <p className="main-user">Welcome, {userData.name}!</p>
+            <p className="user">Email: {userData.email}</p>
+            <p className="user">Student ID: {userData._id}</p>
+           
+        
+
+        <AllAtten />
+
+        <div className='btn-container'>
+          <Logout />
+          </div>
             
-  </Container>
+  </div>
  
     </div>
   );

@@ -1,9 +1,46 @@
+.attendance {
+  margin-top: 80px;
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.atten-title {
+  font-weight: bold;
+  color: #24a758;
+  text-decoration: underline;
+}
+
+.atten-para {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.atten-table{
+  margin-top: 25px;
+
+}
+
+.table-row{
+  background-color: #f3f1f1;
+}
+
+.result{
+  margin-top: 60px;
+}
+
+.atten-result{
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+}
+
 .absent {
-    background-color: #ef8787; 
+    background-color: #ee8484; 
     color: #ffffff; 
   }
   .highlightAbsentCell {
-    background-color: #f8d7da; /* Light red background for absent cells */
-    color: #721c24; /* Dark red text color for contrast */
-    font-weight: bold; /* Make text bold for emphasis */
+    background-color: #f8d7da; 
+    color: #721c24; 
+    font-weight: bold; 
   }
