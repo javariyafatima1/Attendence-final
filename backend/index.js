@@ -12,8 +12,8 @@ app.use('/api',Auth);
 app.use('/at',atten);
 
 app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "fronted", "build")));
-  res.sendFile(path.resolve(__dirname, "fronted", "build", "index.html"));
+  app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 app.listen(PORT, () => {
   console.log(`Example app listening on port: `)
