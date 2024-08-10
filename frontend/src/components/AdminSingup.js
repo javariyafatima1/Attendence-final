@@ -45,7 +45,7 @@ const AdminSignup = () => {
             type="text"
             value={sing.name}
             onChange={handleChange}
-            style={{ width: "350px" }}
+           
           />
           <br />
           <br />
@@ -56,7 +56,7 @@ const AdminSignup = () => {
             type="email"
             value={sing.email}
             onChange={handleChange}
-            style={{ width: "350px" }}
+           
           />
           <br />
           <br />
@@ -67,7 +67,7 @@ const AdminSignup = () => {
             name="password"
             value={sing.password}
             onChange={handleChange}
-            style={{ width: "350px" }}
+         
           />
           <br />
           <br />

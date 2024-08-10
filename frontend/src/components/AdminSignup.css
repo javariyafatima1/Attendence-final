@@ -1,40 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 .container1 {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 1rem;
+}
+.login-input{
+    width: 350px;
 }
 .wrapper1 {
-    min-width: 410px;
+    min-width: 300px; /* Adjusted for better responsiveness */
     margin: 0 auto;
     border-radius: 0.5rem;
     padding: 2rem 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Added background color for better contrast */
 }
+
 .main-title {
     color: #0056b3;
     font-weight: bold;
-    font-size: 32px;
-}
-
-.wrapper1 .main-title{
+    font-size: 2rem; /* Adjusted for better scaling */
     text-align: center;
-    font-style: 1.37rem;
-    font-weight: 600;
-    margin-bottom: 1.87rem;
+    margin-bottom: 1.5rem; /* Adjusted margin for spacing */
 }
 
-.wrapper1 .main-title .login-input {
-    height: 100%;
-    width: 75px;
-    padding: 0 1.25rem 0 3.12rem;
-    box-sizing: border-box;
-}
-
-.signup-btn{
+.signup-btn {
     width: 100%;
     height: 54px;
     cursor: pointer;
@@ -43,14 +36,35 @@
     font-weight: 500;
     font-size: 1.125rem;
     border-radius: 0.31rem;
-}
-
-.para1{
-    margin-top: 18px;
-    margin-left: 20px;
-    font-family: "Montserrat", sans-serif;
+    background-color: #007bff; /* Added background color for the button */
+    color: #fff; /* Text color for the button */
 }
 
 .signup-btn:hover {
     background-color: #0056b3;
 }
+
+.para1 {
+    margin-top: 18px;
+    margin-left: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+    .wrapper1 {
+        padding: 1.5rem; /* Reduced padding for smaller screens */
+    }
+
+    .main-title {
+        font-size: 1.75rem; /* Adjusted font size for smaller screens */
+        margin-bottom: 1rem; /* Adjusted margin for smaller screens */
+    }
+.login-input{
+        width: 250px;
+    }
+
+    .signup-btn {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
+}
+
