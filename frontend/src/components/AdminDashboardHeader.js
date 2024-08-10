@@ -27,7 +27,7 @@ const AdminDashboardHeader= () => {
               <Nav.Link><Link to="/admindashbord" className="nav-link"> Admin Dashboard</Link></Nav.Link>
               <Nav.Link><Link to="/viewallusers" className="nav-link">View all user data</Link></Nav.Link>
 
-              <Nav.Link style={{marginTop:10}} onClick={handleLogout} className="nav-link">Logout</Nav.Link>
+              <Nav.Link  onClick={handleLogout} className="nav-link">Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

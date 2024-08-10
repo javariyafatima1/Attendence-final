@@ -21,12 +21,12 @@ const Dashboardadmin = () => {
 
 
   return (
-    <div>
+    <div className='main-container'>
     <Container>
-    <Typography> <h1>Admin Dashboard</h1></Typography>
+    <Typography><h1>Admin Dashboard</h1></Typography>
     <Typography>Welcome to the Admin Attendence portal!</Typography>
-   
-    <Typography> <h1 style={{marginTop:40}}>SMIT Enroll Student Show</h1></Typography>
+  
+    <Typography> <h1>SMIT Enroll Student Show</h1></Typography>
     <div className='l'>
     <button onClick={() => CategoryClick('GraphicDesign')} className="button-style">
         Graphic Design

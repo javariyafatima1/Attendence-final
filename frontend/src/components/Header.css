@@ -1,10 +1,10 @@
 .navbar-custom {
-  background-color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Space out brand and toggle button */
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
 }
 
 .navbar-custom .navbar-brand {
