@@ -19,7 +19,7 @@ const Login = () => {
         return;
       }
       try {
-        const res = await axios.post('http://localhost:1000/api/login', sing);
+        const res = await axios.post(`${window.location.origin}/api/login`, sing);
         setsing({ email: "", password: "" , });
         alert("Login Successfully")
      console.log(res)

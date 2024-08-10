@@ -30,7 +30,7 @@ const CreateAtten = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:1000/at/markAttendance', {
+      const response = await axios.post(`${window.location.origin}/at/markAttendance`, {
         studentId,
         course,
         date,

@@ -50,11 +50,10 @@
 }
 
 @media (max-width: 768px) {
-    .wrapper1 {
+.wrapper1 {
         padding: 1.5rem; 
-    }
-
-    .main-title {
+}
+.main-title {
         font-size: 1.75rem; 
         margin-bottom: 1rem; 
     }

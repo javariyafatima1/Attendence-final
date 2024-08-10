@@ -21,7 +21,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:1000/api/getUserData', {
+        const response = await axios.get(`${window.location.origin}/api/getUserData`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData(response.data.user);
