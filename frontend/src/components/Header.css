@@ -1,74 +1,69 @@
 .navbar-custom {
   background-color: #ffffff;
-  padding: 10px 0;
-
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space out brand and toggle button */
 }
 
-
 .navbar-custom .navbar-brand {
-  color: #24a758; 
-  font-size: 1.8rem; 
-  font-weight: bold; 
- 
+  color: #24a758;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .navbar-custom .navbar-brand:hover {
   color: #17a2b8;
 }
 
-
 .navbar-custom .navbar-nav {
   font-size: 1.2rem;
 }
 
-
 .navbar-custom .nav-link {
-  color: #0278b8; 
-  padding: 10px 15px; 
-
-  
+  color: #0278b8;
+  padding: 10px 15px;
 }
 
 .navbar-custom .nav-link:hover {
-  color: #24a758; 
+  color: #ffffff;
 }
-
 
 .navbar-custom .nav-link.active {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-
 .navbar-custom .navbar-toggler {
-  border-color: rgb(13, 7, 7);
+  border-color: transparent;
+  background-color: #24a758;
+  margin-right: 0; /* Remove right margin */
 }
 
 .navbar-custom .navbar-toggler-icon {
-  background-color: #fffcfc; }
-
+  background-color: #195f02;
+}
 
 .navbar-custom .navbar-collapse {
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 .navbar-custom .navbar-nav .nav-item {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 @media (max-width: 768px) {
-  
   .navbar-custom .navbar-toggler {
-    margin-right: 0; 
+    margin-right: 0;
   }
   
   .navbar-custom .navbar-collapse {
-    justify-content: flex-start; 
-    background-color: #343a40; 
-    padding: 10px; 
+    justify-content: flex-start;
+    background-color: #ffffff;
+    padding: 10px;
   }
   
   .navbar-custom .navbar-nav .nav-item {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 }
