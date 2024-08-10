@@ -27,7 +27,7 @@ const Dashboardadmin = () => {
     <Typography>Welcome to the Admin Attendence portal!</Typography>
    
     <Typography> <h1 style={{marginTop:40}}>SMIT Enroll Student Show</h1></Typography>
-    <div style={{marginLeft:350,marginTop:30}}>
+    <div className='l'>
     <button onClick={() => CategoryClick('GraphicDesign')} className="button-style">
         Graphic Design
       </button>

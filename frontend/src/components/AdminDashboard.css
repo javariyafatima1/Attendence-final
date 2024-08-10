@@ -15,3 +15,19 @@
   .button-style:hover {
     background-color: #45a049; 
   }
+
+  .l{
+    margin-left:350px;
+    margin-top:30px;
+  }
+  @media (max-width: 768px) {
+    .button-style {
+        font-size: 14px; 
+        padding: 8px 16px; 
+    }
+    
+    .l {
+        margin-left: 2%; 
+        margin-top: 1%;
+    }
+}

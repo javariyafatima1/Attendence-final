@@ -4,6 +4,9 @@
     justify-content: center;
     min-height: 100vh;
 }
+.input{
+    width: 350px;
+}
 .title {
     color: #0056b3;
     font-weight: bold;
@@ -49,4 +52,33 @@
 
 .btn:hover {
     background-color: #0056b3;
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem; 
+    }
+
+    .wrapper {
+        padding: 1rem;
+    }
+    .wrapper .input{
+        width: 250px;
+        margin-left: 50px;
+    }
+
+    .wrapper .title {
+        font-size: 1.25rem; 
+        margin-bottom: 0.75rem;
+    }
+
+    .wrapper .btn {
+        font-size: 0.875rem; 
+        padding: 0.5rem;
+        width: 200px;
+        margin-left: 80px;
+    }
+
+    .para {
+        margin-top: 1rem;
+    }
 }
