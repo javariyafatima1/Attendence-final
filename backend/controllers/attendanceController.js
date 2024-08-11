@@ -1,4 +1,4 @@
-const Attendance = require('../schema/attendencescema');
+const Attendance = require ('../schema/attendencescema');
 const markAttendance = async (req, res) => {
     const { studentId, course, date } = req.body;
     try {
