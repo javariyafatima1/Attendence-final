@@ -18,7 +18,7 @@ const AdminLogin = () => {
     }
     try {
       const res = await axios.post(
-        `http://localhost:3000/api/adminlogin`,
+        `http://localhost:1000/api/adminlogin`,
         sing
       );
       setsing({ email: "", password: "" });

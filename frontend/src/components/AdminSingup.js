@@ -18,7 +18,7 @@ const AdminSignup = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/adminsignup`,
+        `http://localhost:1000/api/adminsignup`,
         sing
       );
       alert("admin create");

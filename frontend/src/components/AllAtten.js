@@ -39,7 +39,7 @@ const AllAtten = () => {
   const fetchAttendance = async (studentId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/at/attendance/${studentId}`,
+        `http://localhost:1000/at/attendance/${studentId}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
