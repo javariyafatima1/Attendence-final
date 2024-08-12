@@ -13,7 +13,7 @@ const UserAttendance = ({userId}) => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/at/attendance/${userId}`, {
+        const response = await axios.get(`https://raam-six.vercel.app/at/attendance/${userId}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}` 
           }

@@ -30,7 +30,7 @@ const Signup = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:1000/api/signup`,
+        `https://raam-six.vercel.app/api/signup`,
         sing
       );
       alert("user create");

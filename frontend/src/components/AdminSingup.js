@@ -18,7 +18,7 @@ const AdminSignup = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:1000/api/adminsignup`,
+        `https://raam-six.vercel.app/api/adminsignup`,
         sing
       );
       alert("admin create");

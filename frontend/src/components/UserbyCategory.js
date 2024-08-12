@@ -11,7 +11,7 @@ const UsersByCategory = ({ category,onUserClick }) => {
 useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/api/users/${category}`);
+        const response = await axios.get(`https://raam-six.vercel.app/api/users/${category}`);
         setUsers(response.data);
       } catch (err) {
         setError(err.response ? err.response.data.message : 'Server error');
