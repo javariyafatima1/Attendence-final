@@ -81,9 +81,7 @@ const AdminLogin = () => {
           >
             Login
           </Button>
-          <p className="para">
-            Don't have an account? <Link to="/adminSignup">Signup now</Link>
-          </p>
+        
         </div>
       </div>
     </div>

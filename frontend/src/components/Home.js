@@ -42,7 +42,7 @@ const Home = () => {
               <Card.Text>
                 Signup, Login, Dashboard, Show All User Data, Logout
               </Card.Text>
-              <Card.Link href="/adminsignup">Admin Portal</Card.Link>
+              <Card.Link href="/adminlogin">Admin Portal</Card.Link>
             </Card.Body>
           </Card>
         </div>

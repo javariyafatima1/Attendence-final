@@ -20,10 +20,11 @@ const Header = () => {
          <Nav.Link><Link to="/" className="nav-link">Home</Link></Nav.Link>
         
          <Nav.Link><Link to="/signup" className="nav-link" >StudentPortal</Link></Nav.Link>
-         <Nav.Link><Link to="/adminsignup" className="nav-link">AdminPortal</Link></Nav.Link>
+         <Nav.Link><Link to="/adminlogin" className="nav-link">AdminPortal</Link></Nav.Link>
 </Nav>
         
      </Navbar.Collapse>
+    
    </Container>
  </Navbar>
     

@@ -5,7 +5,9 @@ const adminCheck = require('../schema/adminscema')
 const signupUser = async (req, res) => {
     const { name, email, password,category } = req.body
     console.log("req body", req.body)
+    
     try {
+        
         const salt = await bycrypt.genSalt(10)
         console.log("salt", salt)
         const hashedPassword = await bycrypt.hash(password, salt)
