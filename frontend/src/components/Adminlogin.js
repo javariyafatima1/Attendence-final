@@ -6,6 +6,7 @@ import axios from "axios";
 import "./Adminlogin.css";
 const AdminLogin = () => {
   const navigate = useNavigate();
+  const toast = useToast();
   const [sing, setsing] = useState({
     email: "",
     password: "",

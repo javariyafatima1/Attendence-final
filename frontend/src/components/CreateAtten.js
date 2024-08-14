@@ -9,6 +9,7 @@ import { TextField, Button, Container, Typography, MenuItem, Select, FormControl
 
 const CreateAtten = () => {
   const navigate = useNavigate();
+  const toast = useToast();
   const [studentId, setStudentId] = useState('');
     const [course, setCourse] = useState('');
     const [date, setDate] = useState('');

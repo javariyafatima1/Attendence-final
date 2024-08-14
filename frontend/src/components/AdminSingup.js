@@ -7,6 +7,7 @@ import {  useToast } from '@chakra-ui/react';
 import axios from "axios";
 const AdminSignup = () => {
   const navigate = useNavigate();
+  const toast = useToast();
   const [sing, setsing] = useState({
     email: "",
     password: "",

@@ -12,6 +12,7 @@ import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const toast = useToast();
   const [sing, setsing] = useState({
     email: "",
     password: "",
