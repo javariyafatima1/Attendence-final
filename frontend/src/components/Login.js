@@ -3,7 +3,7 @@ import './Login.css';
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import Swal from 'sweetalert2'
-import {    useNavigate,} from "react-router-dom";
+import {    Link, useNavigate,} from "react-router-dom";
 import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
@@ -107,7 +107,7 @@ const Login = () => {
 
         <br />
 
-        <p className="signup-text">Don't have an account? <a href="signup">Signup now</a></p>
+        <p className="signup-text">Don't have an account? <Link to="/signup">Signup now</Link></p>
 
 
 

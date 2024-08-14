@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -32,7 +33,7 @@ const Home = () => {
               <Card.Text>
                 Signup, Login, Mark Attendance, View All Attendance
               </Card.Text>
-              <Card.Link href="/signup">Student Portal</Card.Link>
+              <Card.Link ><Link to="/signup">Student Portal</Link></Card.Link>
             </Card.Body>
           </Card>
           <Card className="custom-card">
@@ -42,7 +43,8 @@ const Home = () => {
               <Card.Text>
                 Signup, Login, Dashboard, Show All User Data, Logout
               </Card.Text>
-              <Card.Link href="/adminlogin">Admin Portal</Card.Link>
+              
+              <Card.Link><Link to="/adminlogin">Admin Portal</Link></Card.Link>
             </Card.Body>
           </Card>
         </div>

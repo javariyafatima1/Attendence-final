@@ -138,7 +138,7 @@ const Signup = () => {
           <br />
 
           <p className="signup-text">
-            Already have an account login <a href="/login">Login</a>
+            Already have an account login <Link to="/login">Login</Link>
           </p>
         </div>
       </div>
