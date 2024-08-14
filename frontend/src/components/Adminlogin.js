@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { TextField, Button } from "@mui/material";
+import {  useToast } from '@chakra-ui/react';
 import axios from "axios";
 import "./Adminlogin.css";
 const AdminLogin = () => {
@@ -13,7 +14,13 @@ const AdminLogin = () => {
 
   const Login = async () => {
     if (sing.email === "" || sing.password === "") {
-      alert("All fields are required");
+      toast({
+        title: "Error",
+        description: "All fields are required",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return;
     }
     try {
@@ -22,7 +29,12 @@ const AdminLogin = () => {
         sing
       );
       setsing({ email: "", password: "" });
-      alert(" Admin login successfully");
+      toast({
+        title: " Admin Login Sucessfully",
+         status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
       console.log(res);
 
       if (res.data.token) {
@@ -35,7 +47,13 @@ const AdminLogin = () => {
       console.error(error);
       if (error.response && error.response.data) {
         setError(error.response.data.message);
-        alert(error.response.data.message);
+        
+        toast({
+          title: error.response.data.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
       } else {
         setError("Please try again");
       }

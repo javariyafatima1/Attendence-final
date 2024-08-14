@@ -4,6 +4,7 @@ import "./Signup.css";
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import { FaUserAlt } from "react-icons/fa";
+import {  useToast } from '@chakra-ui/react';
 import { useNavigate, Link } from "react-router-dom";
 import { TextField, Button, Container, Typography } from "@mui/material";
 import CardText from "react-bootstrap/esm/CardText";
@@ -25,7 +26,13 @@ const Signup = () => {
       sing.name === "" ||
       sing.category === ""
     ) {
-      alert("All fields are required");
+      toast({
+        title: "Error",
+        description: "All fields are required",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return;
     }
     try {
@@ -33,12 +40,25 @@ const Signup = () => {
         `https://raam-six.vercel.app/api/signup`,
         sing
       );
-      alert("user create");
+      toast({
+        title: " User Account created",
+        description: "Your account has been successfully created.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
 
       setsing({ email: "", password: "", name: "", category: "" });
       console.log(response);
     } catch (error) {
       console.error(error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
     }
     navigate("/login");
   };

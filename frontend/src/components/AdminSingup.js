@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "./AdminSignup.css";
 import { TextField, Button, Container, Typography } from "@mui/material";
 import CardText from "react-bootstrap/esm/CardText";
+import {  useToast } from '@chakra-ui/react';
 import axios from "axios";
 const AdminSignup = () => {
   const navigate = useNavigate();
@@ -13,7 +14,13 @@ const AdminSignup = () => {
   });
   const Singup = async () => {
     if (sing.email === "" || sing.password === "" || sing.name === "") {
-      alert("All fields are required");
+      toast({
+        title: "Error",
+        description: "All fields are required",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return;
     }
     try {

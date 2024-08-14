@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState ,useEffect} from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import {  useToast } from '@chakra-ui/react';
 import './CreateAtten.css';
 import { TextField, Button, Container, Typography, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 
@@ -20,7 +21,12 @@ const CreateAtten = () => {
         setStudentId(decodedToken.id)
       }else{
          setMessage("please login to mark attendence")
-         alert("please login to mark attendence")
+         toast({
+          title: "Please login your MArk Attedence",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
       }
     },[])
   const MarkAttendance = async () => {
@@ -38,10 +44,17 @@ const CreateAtten = () => {
         headers: { Authorization: `Bearer ${token}` }
     });
     setMessage(response.data.message);
-        alert(response.data.message)
+      
+        toast({
+          title: response.data.message,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+  
         navigate('/allatten')
     }catch(error){
-      setMessage("error ark attendence")
+      setMessage("error mark attendence")
     }
   }
   return (
