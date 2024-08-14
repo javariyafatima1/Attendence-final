@@ -2,14 +2,13 @@ import axios from 'axios';
 import React, { useState ,useEffect} from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import {  useToast } from '@chakra-ui/react';
+
 import './CreateAtten.css';
 import { TextField, Button, Container, Typography, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 
 
 const CreateAtten = () => {
   const navigate = useNavigate();
-  const toast = useToast();
   const [studentId, setStudentId] = useState('');
     const [course, setCourse] = useState('');
     const [date, setDate] = useState('');
@@ -22,12 +21,8 @@ const CreateAtten = () => {
         setStudentId(decodedToken.id)
       }else{
          setMessage("please login to mark attendence")
-         toast({
-          title: "Please login your MArk Attedence",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
+      
+         
       }
     },[])
   const MarkAttendance = async () => {
@@ -46,12 +41,7 @@ const CreateAtten = () => {
     });
     setMessage(response.data.message);
       
-        toast({
-          title: response.data.message,
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-        });
+        
   
         navigate('/allatten')
     }catch(error){
@@ -59,6 +49,7 @@ const CreateAtten = () => {
     }
   }
   return (
+   
     <div className='atten-container'>
     <div className="atten-wrap">
       <h1 className='atten-title'>Mark Attendance</h1>
@@ -106,6 +97,7 @@ const CreateAtten = () => {
       </Button>
       </div>
       </div>
+      
   );
 }
 

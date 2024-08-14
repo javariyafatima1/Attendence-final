@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './Login.css';
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
-import {  useToast } from '@chakra-ui/react';
+
 import {    useNavigate,} from "react-router-dom";
 import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
 
-  const toast = useToast();
+
   const [sing, setsing] = useState({
     email: "",
     password:"",
@@ -18,24 +18,15 @@ const Login = () => {
     const Login = async (e) => {
       e.preventDefault();
       if (sing.email === "" || sing.password === "") {
-        toast({
-          title: "Error",
-          description: "All fields are required",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
+       
+       
         return;
       }
       try {
         const res = await axios.post(`https://raam-six.vercel.app/api/login`, sing);
         setsing({ email: "", password: "" , });
-        toast({
-          title: "Loin Sucessfully",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-        });
+        
+      
      console.log(res)
       
        if (res.data.token) {
@@ -48,12 +39,7 @@ const Login = () => {
        console.error(error)
        if (error.response && error.response.data) {
         setError(error.response.data.message);
-        toast({
-          title: error.response.data.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
+       
       } else {
         setError("Please try again");
       }
@@ -66,6 +52,8 @@ const Login = () => {
     }
 
   return (
+    
+
        <div className="main-container">
       
       <div className= "login-container">
@@ -121,6 +109,8 @@ const Login = () => {
      
         </div>
           </div>
+  
+          
     );
   }
   export default Login;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography } from '@mui/material';
+
 import AllAtten from './AllAtten';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import axios from 'axios';
 import Logout from './Logout';
 
-import { blueGrey } from '@mui/material/colors';
+
 
 
 const Dashboard = () => {
