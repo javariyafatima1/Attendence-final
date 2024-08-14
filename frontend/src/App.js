@@ -15,6 +15,7 @@ import AdminLogin from './components/Adminlogin';
 import AdminDashboardHeader from './components/AdminDashboardHeader';
 import Dashboardadmin from './components/Dashboardadmin';
 import View from './components/viewallStudent';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   const location = useLocation();
@@ -42,9 +43,11 @@ function App() {
 }
 
 const AppWrapper = () => (
+  <ChakraProvider>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+  </ChakraProvider>
 );
 
 export default AppWrapper;
