@@ -2,11 +2,9 @@ import axios from 'axios';
 import React, { useState ,useEffect} from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
 import './CreateAtten.css';
 import { TextField, Button, Container, Typography, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
-
-
 const CreateAtten = () => {
   const navigate = useNavigate();
   const [studentId, setStudentId] = useState('');
@@ -21,9 +19,7 @@ const CreateAtten = () => {
         setStudentId(decodedToken.id)
       }else{
          setMessage("please login to mark attendence")
-      
-         
-      }
+         }
     },[])
   const MarkAttendance = async () => {
     const token = localStorage.getItem('token');
@@ -41,7 +37,13 @@ const CreateAtten = () => {
     });
     setMessage(response.data.message);
       
-        
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Mark Attendence Sucessfull",
+      showConfirmButton: false,
+      timer: 1500
+    });
   
         navigate('/allatten')
     }catch(error){
@@ -100,5 +102,4 @@ const CreateAtten = () => {
       
   );
 }
-
 export default CreateAtten;

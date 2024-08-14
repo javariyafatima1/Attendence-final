@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import './Login.css';
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
-
+import Swal from 'sweetalert2'
 import {    useNavigate,} from "react-router-dom";
 import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
-
-
   const [sing, setsing] = useState({
     email: "",
     password:"",
@@ -19,14 +17,26 @@ const Login = () => {
       e.preventDefault();
       if (sing.email === "" || sing.password === "") {
        
-       
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "All field Empty",
+          showConfirmButton: false,
+          timer: 1500
+        });
         return;
       }
       try {
         const res = await axios.post(`https://raam-six.vercel.app/api/login`, sing);
         setsing({ email: "", password: "" , });
-        
-      
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Login Sucefully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+       
      console.log(res)
       
        if (res.data.token) {
@@ -39,7 +49,13 @@ const Login = () => {
        console.error(error)
        if (error.response && error.response.data) {
         setError(error.response.data.message);
-       
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: error.response.data.message,
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
         setError("Please try again");
       }
@@ -64,7 +80,7 @@ const Login = () => {
             <input
             placeholder='Email Address'
               className="input-field"
-              required
+             
               type="name"
               name='email'
               value={sing.email}
@@ -77,7 +93,7 @@ const Login = () => {
             <input
            placeholder='Password'
               className="input-field"
-              required
+            
               type="password"
               name='password'
             value={sing.password}

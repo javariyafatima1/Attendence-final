@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./AdminSignup.css";
+import Swal from 'sweetalert2'
 import { TextField, Button, Container, Typography } from "@mui/material";
 import CardText from "react-bootstrap/esm/CardText";
 
@@ -15,7 +16,13 @@ const AdminSignup = () => {
   });
   const Singup = async () => {
     if (sing.email === "" || sing.password === "" || sing.name === "") {
-      
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "All field Empty",
+        showConfirmButton: false,
+        timer: 1500
+      });
       return;
     }
     try {
@@ -23,11 +30,24 @@ const AdminSignup = () => {
         `https://raam-six.vercel.app/api/adminsignup`,
         sing
       );
-      alert("admin create");
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Admin create SucessFull",
+        showConfirmButton: false,
+        timer: 1500
+      });
       setsing({ email: "", password: "", name: "" });
       console.log(response);
     } catch (error) {
       console.error(error);
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title:"error" ,
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
     navigate("/adminlogin");
   };

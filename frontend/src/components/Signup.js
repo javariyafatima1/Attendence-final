@@ -4,7 +4,7 @@ import "./Signup.css";
 import { IoMail } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import { FaUserAlt } from "react-icons/fa";
-import {   useToast } from '@chakra-ui/react';
+import Swal from 'sweetalert2'
 import { useNavigate, Link } from "react-router-dom";
 import { TextField, Button, Container, Typography } from "@mui/material";
 import CardText from "react-bootstrap/esm/CardText";
@@ -12,7 +12,7 @@ import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const toast = useToast();
+
   const [sing, setsing] = useState({
     email: "",
     password: "",
@@ -27,14 +27,14 @@ const Signup = () => {
       sing.name === "" ||
       sing.category === ""
     ) {
-      toast({
-        title: "Error",
-        description: "All fields are required",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
+      
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "All field Empty",
+        showConfirmButton: false,
+        timer: 1500
       });
-  
       return;
     }
     try {
@@ -42,12 +42,12 @@ const Signup = () => {
         `https://raam-six.vercel.app/api/signup`,
         sing
       );
-      toast({
-        title: "Account created",
-        description: "Your account has been successfully created.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "User Create",
+        showConfirmButton: false,
+        timer: 1500
       });
        
        
@@ -57,12 +57,12 @@ const Signup = () => {
         navigate("/login");
     } catch (error) {
       console.error(error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "error",
+        showConfirmButton: false,
+        timer: 1500
       });
       
     }
