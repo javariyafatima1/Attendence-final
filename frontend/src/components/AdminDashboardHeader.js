@@ -8,7 +8,6 @@ import './Header.css';
 
 const AdminDashboardHeader= () => {
   const navigate = useNavigate();
-
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');
@@ -17,7 +16,7 @@ const AdminDashboardHeader= () => {
   return (
     <div>
         
-      <Navbar expand="lg" variant="dark" className="navbar-custom">
+<Navbar expand="lg" variant="dark" className="navbar-custom">
         <Container>
           <Navbar.Brand href="/"><img src={image} style={{ height: 50, width: 70 }} alt="Logo"/></Navbar.Brand>
           <Navbar.Brand href="/">AttendanceApp</Navbar.Brand>
@@ -30,6 +29,7 @@ const AdminDashboardHeader= () => {
               <Nav.Link  onClick={handleLogout} className="nav-link">Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>
+
         </Container>
       </Navbar>
     </div>

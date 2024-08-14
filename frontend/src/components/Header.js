@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 const Header = () => {
   return (
-    <div>
+  <div>
 <Navbar expand="lg" variant="dark" className="navbar-custom">
    <Container> 
-
       <Navbar.Brand  href="/"><img src={image} style={{height:50,width:70}}/>
       </Navbar.Brand>
      <Navbar.Brand href="/">AttendenceApp </Navbar.Brand>
@@ -22,13 +21,11 @@ const Header = () => {
          <Nav.Link><Link to="/signup" className="nav-link" >StudentPortal</Link></Nav.Link>
          <Nav.Link><Link to="/adminlogin" className="nav-link">AdminPortal</Link></Nav.Link>
 </Nav>
-        
-     </Navbar.Collapse>
+</Navbar.Collapse>
     
-   </Container>
+</Container>
  </Navbar>
-    
-    </div>
+</div>
   )
 }
 
